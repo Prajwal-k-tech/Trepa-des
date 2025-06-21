@@ -67,26 +67,25 @@ export default function FeaturesSection() {
       }
     }
   ]
-  return (
-    <section className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-6">
+  return (    <section className="py-16 lg:py-20 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Features Grid */}
-        <div className="mb-20">
+        <div className="mb-16 lg:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 lg:mb-16"
           >
-            <h2 className="font-poppins text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 lg:mb-6">
               Why Accuracy Matters
             </h2>
-            <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="font-inter text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               Traditional prediction markets only care about right vs wrong. We believe precision should be rewarded.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -94,16 +93,15 @@ export default function FeaturesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-              >
-                <Card className="bg-card border-border p-6 h-full hover:border-primary/50 transition-all duration-300 group">
-                  <feature.icon className={`w-12 h-12 ${feature.color} mb-4 group-hover:scale-110 transition-transform`} />
-                  <h3 className="font-poppins text-xl font-bold text-card-foreground mb-3">
+              >                <Card className="bg-card border-border p-4 sm:p-6 h-full hover:border-primary/50 transition-all duration-300 group">
+                  <feature.icon className={`w-10 h-10 sm:w-12 sm:h-12 ${feature.color} mb-4 group-hover:scale-110 transition-transform`} />
+                  <h3 className="font-poppins text-lg sm:text-xl font-bold text-card-foreground mb-3">
                     {feature.title}
                   </h3>
-                  <p className="font-inter text-muted-foreground mb-4">
+                  <p className="font-inter text-sm sm:text-base text-muted-foreground mb-4">
                     {feature.description}
                   </p>
-                  <div className={`font-inter text-sm font-semibold ${feature.color}`}>
+                  <div className={`font-inter text-xs sm:text-sm font-semibold ${feature.color}`}>
                     {feature.highlight}
                   </div>
                 </Card>
@@ -119,15 +117,13 @@ export default function FeaturesSection() {
           viewport={{ once: true }}
           className="space-y-16"
         >          <div className="text-center">
-            <h2 className="font-poppins text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 lg:mb-6">
               Traditional vs <span className="text-primary">Trepa</span>
             </h2>
-            <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="font-inter text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               See how the same predictions perform in traditional binary markets versus our precision-based platform.
             </p>
-          </div>
-
-          <div className="space-y-8">
+          </div>          <div className="space-y-6 lg:space-y-8">
             {comparisonData.map((comparison, index) => (
               <motion.div
                 key={comparison.scenario}
@@ -136,14 +132,13 @@ export default function FeaturesSection() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
               >
-                <Card className="bg-trepa-muted border-trepa-muted-foreground/20 p-8">
-                  <div className="grid lg:grid-cols-3 gap-8 items-center">
-                    {/* Scenario */}
-                    <div className="text-center lg:text-left">
-                      <h3 className="font-poppins text-2xl font-bold text-trepa-foreground mb-2">
+                <Card className="bg-trepa-muted border-trepa-muted-foreground/20 p-4 sm:p-6 lg:p-8">
+                  <div className="grid lg:grid-cols-3 gap-6 lg:gap-8 items-center">
+                    {/* Scenario */}                    <div className="text-center lg:text-left">
+                      <h3 className="font-poppins text-xl sm:text-2xl font-bold text-trepa-foreground mb-2">
                         {comparison.scenario}
                       </h3>
-                      <p className="font-inter text-trepa-muted-foreground">
+                      <p className="font-inter text-sm sm:text-base text-trepa-muted-foreground">
                         Actual Result: <span className="text-trepa-primary font-bold">{comparison.actual}</span>
                       </p>
                     </div>

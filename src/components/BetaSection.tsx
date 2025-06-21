@@ -28,24 +28,23 @@ export default function BetaSection() {
     { number: "$50K", label: "Prize Pool" }
   ]
 
-  return (
-    <section className="py-20 bg-gradient-to-br from-trepa-background via-trepa-muted to-trepa-background">
-      <div className="max-w-7xl mx-auto px-6">
+  return (    <section className="py-16 lg:py-20 bg-gradient-to-br from-trepa-background via-trepa-muted to-trepa-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 lg:mb-16"
         >
-          <h2 className="font-poppins text-4xl md:text-6xl font-bold text-trepa-foreground mb-6">
+          <h2 className="font-poppins text-3xl sm:text-4xl md:text-6xl font-bold text-trepa-foreground mb-4 lg:mb-6">
             Join the <span className="text-trepa-primary">Beta</span>
           </h2>
-          <p className="font-inter text-xl text-trepa-muted-foreground max-w-3xl mx-auto">
+          <p className="font-inter text-lg sm:text-xl text-trepa-muted-foreground max-w-3xl mx-auto px-4">
             Be among the first to experience precision predictions. Limited spots available for our public beta launch.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Beta Signup Form */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
