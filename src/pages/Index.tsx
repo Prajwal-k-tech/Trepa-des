@@ -116,11 +116,11 @@ const Index = () => {
                   <div className="absolute inset-0 rounded-full border-4 border-gray-700 bg-gray-900/20"></div>
                   <div className="absolute inset-8 rounded-full border-4 border-gray-600 bg-gray-800/20"></div>
                   <div className="absolute inset-16 rounded-full border-4 border-gray-500 bg-gray-700/20"></div>
-                  <div className="absolute inset-24 rounded-full border-4 border-primary/50 bg-primary/10"></div>
-                  <div className="absolute inset-32 rounded-full border-4 border-primary bg-primary/20"></div>
+                  <div className="absolute inset-24 rounded-full border-4 border-green-500/50 bg-green-500/10"></div>
+                  <div className="absolute inset-32 rounded-full border-4 border-green-500 bg-green-500/20"></div>
 
                   {/* Center bullseye */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-primary"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-green-500"></div>
 
                   {/* Accuracy labels */}
                   <div className="absolute top-2 left-1/2 transform -translate-x-1/2 text-xs text-gray-500">
@@ -132,15 +132,15 @@ const Index = () => {
                   <div className="absolute top-20 left-1/2 transform -translate-x-1/2 text-xs text-gray-300">
                     ±0.5%
                   </div>
-                  <div className="absolute top-28 left-1/2 transform -translate-x-1/2 text-xs text-primary">
+                  <div className="absolute top-28 left-1/2 transform -translate-x-1/2 text-xs text-green-500">
                     ±0.1%
                   </div>
-                  <div className="absolute top-36 left-1/2 transform -translate-x-1/2 text-xs text-primary font-bold">
+                  <div className="absolute top-36 left-1/2 transform -translate-x-1/2 text-xs text-green-500 font-bold">
                     Exact
                   </div>
 
                   {/* Animated pulse effect */}
-                  <div className="absolute inset-32 rounded-full border-2 border-primary animate-ping opacity-75"></div>
+                  <div className="absolute inset-32 rounded-full border-2 border-green-500 animate-ping opacity-75"></div>
                 </div>
               </div>
             </div>
@@ -156,18 +156,18 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6">
-              <span className="text-foreground">Slide and </span>
-              <span className="text-primary">Stake</span>
+              <span className="text-white">Slide and </span>
+              <span className="text-green-500">Stake</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Experience precision predictions in action
             </p>
           </div>
 
           <div className="max-w-2xl mx-auto">
-            <div className="relative bg-card backdrop-blur-sm border border-gray-800/60 rounded-2xl p-8 shadow-2xl">
+            <div className="relative bg-gray-900/60 backdrop-blur-sm border border-gray-800/60 rounded-2xl p-8 shadow-2xl">
               {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent rounded-2xl"></div>
 
               <div className="relative z-10">
                 <h3 className="text-2xl font-semibold mb-8 text-center text-card-foreground">
