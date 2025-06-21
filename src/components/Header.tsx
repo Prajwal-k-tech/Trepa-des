@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const logoPath = import.meta.env.PROD ? "/Trepa-des/Trepa_logo_white.svg" : "/Trepa_logo_white.svg";
 
   return (    <header className="fixed top-0 left-0 right-0 z-50 glass-effect">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,7 +17,7 @@ const Header = () => {
             className="flex items-center"
           >
             <img 
-              src="/Trepa_logo_white.svg" 
+              src={logoPath} 
               alt="Trepa" 
               className="h-8 w-auto"
             />
