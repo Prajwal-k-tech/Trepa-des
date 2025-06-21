@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FeatureCard from "@/components/FeatureCard";
 import BackgroundEffects from "@/components/BackgroundEffects";
-import { TrendingUp, Target } from "lucide-react";
+import { TrendingUp, Target, Lightbulb } from "lucide-react";
 
 const Index = () => {
   return (
@@ -176,7 +176,7 @@ const Index = () => {
             <FeatureCard
               icon={
                 <div className="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center">
-                  <Brain className="w-6 h-6 text-pink-500" />
+                  <Lightbulb className="w-6 h-6 text-pink-500" />
                 </div>
               }
               title="Engage Your Mind"
