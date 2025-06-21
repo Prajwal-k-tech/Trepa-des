@@ -158,13 +158,12 @@ export default function HeroSection() {
             <p className="font-inter text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
               From predicting vibes to forecasting real-world numbers.
             </p>
-            
-            <p className="font-inter text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              <p className="font-inter text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
               You enter a point forecast, the exact number you think will be right. After the result is out, rewards scale based on how close your forecast is to the real value.
             </p>
             
-            <p className="font-poppins text-xl font-semibold text-primary">
-              The closer you are, the more you win.
+            <p className="font-poppins text-xl font-semibold text-foreground">
+              The closer you are, the more you win with <span className="accuracy-highlight">precision rewards</span>.
             </p>
           </motion.div>
 
@@ -174,9 +173,8 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-12 space-y-4"
-          >
-            <p className="font-inter text-lg text-foreground">
-              Flex your foresight. Get rewarded for accuracy.
+          >            <p className="font-inter text-lg text-foreground">
+              Flex your foresight. Get rewarded for <span className="accuracy-highlight">accuracy</span>.
             </p>
             <p className="font-inter text-muted-foreground">
               Experience the new Trepa in our upcoming beta launch.
@@ -194,13 +192,12 @@ export default function HeroSection() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mt-12"
-          >
-            <Button 
+          >            <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-4 text-lg font-semibold group font-poppins relative overflow-hidden"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-4 text-lg font-semibold group font-poppins relative overflow-hidden button-glow gradient-blur"
             >
-              <div className="absolute inset-0 bg-white/10 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-              <span className="relative">Join Waitlist</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              <span className="relative">Join Beta</span>
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform relative" />
             </Button>
           </motion.div>

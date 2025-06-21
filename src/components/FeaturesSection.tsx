@@ -70,18 +70,17 @@ export default function FeaturesSection() {
   return (    <section className="py-16 lg:py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Features Grid */}
-        <div className="mb-16 lg:mb-20">
-          <motion.div
+        <div className="mb-16 lg:mb-20">          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-12 lg:mb-16"
           >
             <h2 className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 lg:mb-6">
-              Why Accuracy Matters
+              Why <span className="accuracy-highlight">Accuracy</span> Matters
             </h2>
             <p className="font-inter text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
-              Traditional prediction markets only care about right vs wrong. We believe precision should be rewarded.
+              Traditional prediction markets only care about right vs wrong. We believe <span className="accuracy-highlight">precision</span> should be rewarded.
             </p>
           </motion.div>
 
@@ -93,7 +92,7 @@ export default function FeaturesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-              >                <Card className="bg-card border-border p-4 sm:p-6 h-full hover:border-primary/50 transition-all duration-300 group">
+              >                <Card className="bg-card/50 border-border/50 backdrop-blur-sm p-4 sm:p-6 h-full hover:border-primary/30 hover:bg-card/70 transition-all duration-300 group gradient-blur">
                   <feature.icon className={`w-10 h-10 sm:w-12 sm:h-12 ${feature.color} mb-4 group-hover:scale-110 transition-transform`} />
                   <h3 className="font-poppins text-lg sm:text-xl font-bold text-card-foreground mb-3">
                     {feature.title}
@@ -101,7 +100,7 @@ export default function FeaturesSection() {
                   <p className="font-inter text-sm sm:text-base text-muted-foreground mb-4">
                     {feature.description}
                   </p>
-                  <div className={`font-inter text-xs sm:text-sm font-semibold ${feature.color}`}>
+                  <div className={`font-inter text-xs sm:text-sm font-semibold ${feature.color} bg-primary/10 px-3 py-1 rounded-full inline-block`}>
                     {feature.highlight}
                   </div>
                 </Card>

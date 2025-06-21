@@ -27,20 +27,23 @@ export default function BetaSection() {
     { number: "15", label: "Markets Ready" },
     { number: "$50K", label: "Prize Pool" }
   ]
-
-  return (    <section className="py-16 lg:py-20 bg-gradient-to-br from-trepa-background via-trepa-muted to-trepa-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  return (
+    <section className="py-16 lg:py-20 bg-gradient-to-br from-background via-muted/20 to-background relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-12 lg:mb-16"
         >
-          <h2 className="font-poppins text-3xl sm:text-4xl md:text-6xl font-bold text-trepa-foreground mb-4 lg:mb-6">
-            Join the <span className="text-trepa-primary">Beta</span>
+          <h2 className="font-poppins text-3xl sm:text-4xl md:text-6xl font-bold text-foreground mb-4 lg:mb-6">
+            Join the <span className="accuracy-highlight">Beta</span>
           </h2>
-          <p className="font-inter text-lg sm:text-xl text-trepa-muted-foreground max-w-3xl mx-auto px-4">
-            Be among the first to experience precision predictions. Limited spots available for our public beta launch.
+          <p className="font-inter text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
+            Be among the first to experience <span className="accuracy-highlight">precision predictions</span>. Limited spots available for our public beta launch.
           </p>
         </motion.div>
 
@@ -50,43 +53,40 @@ export default function BetaSection() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-          >
-            <Card className="bg-trepa-muted border-trepa-primary/20 p-8">
+          >            <Card className="bg-card/50 border-primary/20 backdrop-blur-sm p-8 gradient-blur">
               {!isSubmitted ? (
                 <div className="space-y-6">
                   <div className="space-y-4">
-                    <h3 className="font-poppins text-2xl font-bold text-trepa-foreground">
+                    <h3 className="font-poppins text-2xl font-bold text-foreground">
                       Get Early Access
                     </h3>
-                    <p className="font-inter text-trepa-muted-foreground">
-                      Join our waitlist and be notified when beta launches. Plus, get exclusive perks as an early user.
+                    <p className="font-inter text-muted-foreground">
+                      Join our beta and be notified when spots open. Plus, get exclusive perks as an early user.
                     </p>
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-trepa-muted-foreground" />
+                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                       <Input
                         type="email"
                         placeholder="Enter your email address"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="pl-12 bg-trepa-background border-trepa-muted-foreground/30 text-trepa-foreground placeholder:text-trepa-muted-foreground focus:border-trepa-primary"
+                        className="pl-12 bg-background border-border text-foreground placeholder:text-muted-foreground focus:border-primary gradient-blur"
                         required
                       />
                     </div>
                     <Button 
                       type="submit"
-                      className="w-full bg-trepa-primary hover:bg-trepa-primary/90 text-white font-poppins font-bold text-lg py-3 group"
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-poppins font-bold text-lg py-3 group button-glow"
                     >
                       <Rocket className="mr-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
-                      Join Beta Waitlist
+                      Join Beta
                       <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
-                  </form>
-
-                  <div className="space-y-3">
-                    <h4 className="font-poppins font-semibold text-trepa-foreground">
+                  </form>                  <div className="space-y-3">
+                    <h4 className="font-poppins font-semibold text-foreground">
                       Beta Benefits:
                     </h4>
                     <ul className="space-y-2">
@@ -97,9 +97,9 @@ export default function BetaSection() {
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: index * 0.1 }}
-                          className="flex items-center gap-3 font-inter text-trepa-muted-foreground"
+                          className="flex items-center gap-3 font-inter text-muted-foreground"
                         >
-                          <CheckCircle className="w-5 h-5 text-trepa-primary flex-shrink-0" />
+                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                           {benefit}
                         </motion.li>
                       ))}
@@ -111,20 +111,19 @@ export default function BetaSection() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center space-y-6 py-8"
-                >
-                  <motion.div
+                >                  <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
                   >
-                    <CheckCircle className="w-16 h-16 text-trepa-primary mx-auto" />
+                    <CheckCircle className="w-16 h-16 text-primary mx-auto" />
                   </motion.div>
                   <div>
-                    <h3 className="font-poppins text-2xl font-bold text-trepa-foreground mb-2">
+                    <h3 className="font-poppins text-2xl font-bold text-foreground mb-2">
                       You're In!
                     </h3>
-                    <p className="font-inter text-trepa-muted-foreground">
-                      Thanks for joining the beta waitlist. We'll notify you as soon as spots open up.
+                    <p className="font-inter text-muted-foreground">
+                      Thanks for joining the beta. We'll notify you as soon as spots open up.
                     </p>
                   </div>
                 </motion.div>

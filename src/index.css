@@ -8,33 +8,34 @@
   /**
    * Tailwind CSS theme - Trepa Brand Colors
    * Using Trepa's brand color palette
-  */
-  :root {
-    --background: 0 0% 0%; /* #000000 */
+  */  :root {
+    --background: 0 0% 3%; /* #080808 - Softer than pure black */
     --foreground: 218 11% 91%; /* #e7e9ea */
 
-    --card: 0 0% 9%; /* #181818 */
+    --card: 0 0% 6%; /* #0f0f0f - Slightly lighter card background */
     --card-foreground: 0 0% 91%; /* #e7e9ea */
 
-    --popover: 0 0% 9%;
-    --popover-foreground: 0 0% 91%;    --primary: 126.65 14.35% 87.16%; /* oklch(0.8716 0.1435 126.6456) - Trepa Green */
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 91%;
+
+    --primary: 126.65 14.35% 87.16%; /* oklch(0.8716 0.1435 126.6456) - Trepa Green */
     --primary-foreground: 248.51 1.28% 18.84%; /* oklch(0.1884 0.0128 248.5103) */
 
-    --secondary: 204 20% 94%; /* #f0f3f4 */
-    --secondary-foreground: 203 80% 8%; /* #0f1419 */
+    --secondary: 126.65 8% 12%; /* Darker green secondary */
+    --secondary-foreground: 126.65 14.35% 87.16%;
 
-    --muted: 0 0% 9%; /* #181818 */
-    --muted-foreground: 210 7% 46%; /* #72767a */
+    --muted: 0 0% 8%; /* #141414 - Slightly lighter muted */
+    --muted-foreground: 210 7% 56%; /* #8a8e92 - Lighter muted foreground */
 
-    --accent: 337 100% 66%;
+    --accent: 126.65 14.35% 77.16%; /* Lighter green accent */
     --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 330 100% 65%;
+    --border: 0 0% 12%; /* #1f1f1f - Softer borders */
+    --input: 0 0% 12%;
+    --ring: 126.65 14.35% 67.16%; /* Green ring */
 
     --radius: 0.75rem;
 
@@ -101,6 +102,51 @@
 
   body {
     @apply bg-background text-foreground;
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(0 0% 1%) 50%, hsl(var(--background)) 100%);
+    min-height: 100vh;
+  }
+
+  /* Custom gradient utilities */
+  .gradient-blur {
+    background: linear-gradient(135deg, 
+      hsl(var(--primary) / 0.1) 0%, 
+      hsl(var(--primary) / 0.05) 50%, 
+      transparent 100%
+    );
+    backdrop-filter: blur(20px);
+  }
+
+  .accuracy-highlight {
+    background: linear-gradient(90deg, 
+      hsl(var(--primary)) 0%, 
+      hsl(var(--primary) / 0.8) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+  }
+
+  .button-glow {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .button-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, 
+      hsl(var(--primary) / 0.3), 
+      hsl(var(--primary) / 0.1), 
+      hsl(var(--primary) / 0.3)
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .button-glow:hover::before {
+    opacity: 1;
   }
 
   /* Custom slider styling */
