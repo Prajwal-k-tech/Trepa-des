@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FeatureCard from "@/components/FeatureCard";
 import BackgroundEffects from "@/components/BackgroundEffects";
-import { TrendingUp, Target, Brain } from "lucide-react";
+import { TrendingUp, Target } from "lucide-react";
 
 const Index = () => {
   return (
@@ -14,115 +14,6 @@ const Index = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 relative z-10">
         <div className="max-w-7xl mx-auto text-center relative">
-          {/* Sophisticated brain illustration */}
-          <div className="absolute -top-10 right-1/6 hidden xl:block">
-            <div className="relative w-48 h-48">
-              {/* Neural network connections */}
-              <svg
-                className="absolute inset-0 w-full h-full text-pink-500/20"
-                viewBox="0 0 200 200"
-              >
-                <defs>
-                  <linearGradient
-                    id="connectionGradient"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="100%"
-                  >
-                    <stop offset="0%" stopColor="rgb(236 72 153 / 0.3)" />
-                    <stop offset="100%" stopColor="rgb(236 72 153 / 0.1)" />
-                  </linearGradient>
-                </defs>
-                <path
-                  d="M30,50 Q100,30 170,70"
-                  stroke="url(#connectionGradient)"
-                  strokeWidth="1"
-                  fill="none"
-                  className="animate-pulse"
-                />
-                <path
-                  d="M40,120 Q100,80 160,130"
-                  stroke="url(#connectionGradient)"
-                  strokeWidth="1"
-                  fill="none"
-                  className="animate-pulse"
-                  style={{ animationDelay: "1s" }}
-                />
-                <path
-                  d="M60,160 Q120,140 180,160"
-                  stroke="url(#connectionGradient)"
-                  strokeWidth="1"
-                  fill="none"
-                  className="animate-pulse"
-                  style={{ animationDelay: "2s" }}
-                />
-                <circle
-                  cx="30"
-                  cy="50"
-                  r="3"
-                  fill="rgb(236 72 153 / 0.4)"
-                  className="animate-pulse"
-                />
-                <circle
-                  cx="170"
-                  cy="70"
-                  r="3"
-                  fill="rgb(236 72 153 / 0.4)"
-                  className="animate-pulse"
-                />
-                <circle
-                  cx="40"
-                  cy="120"
-                  r="3"
-                  fill="rgb(236 72 153 / 0.4)"
-                  className="animate-pulse"
-                  style={{ animationDelay: "1s" }}
-                />
-                <circle
-                  cx="160"
-                  cy="130"
-                  r="3"
-                  fill="rgb(236 72 153 / 0.4)"
-                  className="animate-pulse"
-                  style={{ animationDelay: "1s" }}
-                />
-                <circle
-                  cx="60"
-                  cy="160"
-                  r="3"
-                  fill="rgb(236 72 153 / 0.4)"
-                  className="animate-pulse"
-                  style={{ animationDelay: "2s" }}
-                />
-                <circle
-                  cx="180"
-                  cy="160"
-                  r="3"
-                  fill="rgb(236 72 153 / 0.4)"
-                  className="animate-pulse"
-                  style={{ animationDelay: "2s" }}
-                />
-              </svg>
-
-              {/* Brain outline */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="relative">
-                  <Brain className="w-20 h-20 text-pink-400/60 filter drop-shadow-lg" />
-                  <div className="absolute inset-0 bg-pink-500/20 rounded-full blur-xl"></div>
-                </div>
-              </div>
-
-              {/* Floating quote bubble */}
-              <div className="absolute -left-16 top-8 bg-gray-900/80 backdrop-blur-sm border border-pink-500/20 rounded-lg px-3 py-2 text-xs text-pink-300">
-                <div className="relative">
-                  I analyze sentiment with my empathy and psyops skills.
-                  <div className="absolute -right-1 top-3 w-2 h-2 bg-gray-900 border-r border-b border-pink-500/20 transform rotate-45"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <h1 className="text-5xl md:text-7xl font-bold font-heading leading-tight mb-8 relative">
             <span className="text-white drop-shadow-2xl">
               From predicting vibes to

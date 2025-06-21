@@ -8,9 +8,9 @@ const BackgroundEffects = () => {
       <div className="absolute inset-0 bg-gradient-radial from-pink-950/20 via-gray-950/50 to-black" />
 
       {/* Large atmospheric blurs */}
-      <div className="absolute top-1/4 left-1/5 w-[600px] h-[600px] bg-pink-500/8 rounded-full blur-[120px] animate-pulse" />
-      <div className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-purple-600/6 rounded-full blur-[100px]" />
-      <div className="absolute bottom-1/3 left-1/2 w-[400px] h-[400px] bg-pink-600/10 rounded-full blur-[80px]" />
+      <div className="absolute top-1/4 left-1/5 w-[800px] h-[800px] bg-pink-500/8 rounded-full blur-[160px] animate-pulse" />
+      <div className="absolute top-1/2 right-1/4 w-[700px] h-[700px] bg-purple-600/6 rounded-full blur-[140px]" />
+      <div className="absolute bottom-1/3 left-1/2 w-[600px] h-[600px] bg-pink-600/10 rounded-full blur-[120px]" />
 
       {/* Center focus gradient */}
       <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black/60" />
