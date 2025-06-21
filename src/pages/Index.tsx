@@ -2,38 +2,59 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FeatureCard from "@/components/FeatureCard";
+import BackgroundEffects from "@/components/BackgroundEffects";
 import { TrendingUp, Target, Brain } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white relative">
+      <BackgroundEffects />
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold font-heading leading-tight mb-8">
-            <span className="text-white">From predicting vibes to</span>
+      <section className="pt-32 pb-20 px-6 relative z-10">
+        <div className="max-w-7xl mx-auto text-center relative">
+          {/* Floating brain-like illustration */}
+          <div className="absolute top-0 right-1/4 hidden lg:block">
+            <div className="relative">
+              <div className="w-32 h-32 rounded-full border-2 border-pink-500/30 border-dashed animate-spin-slow">
+                <div className="absolute inset-4 rounded-full border border-pink-500/20 border-dotted">
+                  <div className="absolute inset-2 rounded-full bg-gradient-to-br from-pink-500/10 to-purple-500/10 backdrop-blur-sm">
+                    <Brain className="w-8 h-8 text-pink-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-bold font-heading leading-tight mb-8 relative">
+            <span className="text-white drop-shadow-2xl">
+              From predicting vibes to
+            </span>
             <br />
-            <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-pink-500 via-pink-400 to-pink-600 bg-clip-text text-transparent drop-shadow-lg">
               forecasting real-world numbers.
             </span>
           </h1>
 
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed opacity-90">
             Flex your foresight. Get rewarded for accuracy. Experience the new
             Trepa in our upcoming beta launch. Real questions. Real forecasting.
             Real rewards.
           </p>
 
-          <Button className="bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all transform hover:scale-105">
-            Join Beta Program
-          </Button>
+          <div className="relative inline-block">
+            <Button className="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white px-8 py-4 rounded-full text-lg font-medium transition-all transform hover:scale-105 shadow-lg shadow-pink-500/25 relative z-10">
+              Join Beta Program
+            </Button>
+            {/* Glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-pink-600 rounded-full blur-xl opacity-30 -z-10 scale-110"></div>
+          </div>
         </div>
       </section>
 
       {/* Precision Matters Section */}
-      <section className="py-20 px-6 border-t border-gray-800">
+      <section className="py-20 px-6 border-t border-gray-800/50 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
@@ -71,7 +92,7 @@ const Index = () => {
       {/* Slide and Stake Section */}
       <section
         id="how-it-works"
-        className="py-20 px-6 border-t border-gray-800"
+        className="py-20 px-6 border-t border-gray-800/50 relative z-10"
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -128,7 +149,10 @@ const Index = () => {
       </section>
 
       {/* Why Trepa Section */}
-      <section id="why-trepa" className="py-20 px-6 border-t border-gray-800">
+      <section
+        id="why-trepa"
+        className="py-20 px-6 border-t border-gray-800/50 relative z-10"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4">
