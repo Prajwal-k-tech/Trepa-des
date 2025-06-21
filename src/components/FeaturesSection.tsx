@@ -117,12 +117,12 @@ export default function FeaturesSection() {
           className="space-y-16"
         >          <div className="text-center">
             <h2 className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 lg:mb-6">
-              Traditional vs <span className="text-primary">Trepa</span>
+              Traditional vs <span className="accuracy-highlight">Trepa</span>
             </h2>
             <p className="font-inter text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
-              See how the same predictions perform in traditional binary markets versus our precision-based platform.
+              See how the same predictions perform in traditional binary markets versus our <span className="accuracy-highlight">precision-based</span> platform.
             </p>
-          </div>          <div className="space-y-6 lg:space-y-8">
+          </div><div className="space-y-6 lg:space-y-8">
             {comparisonData.map((comparison, index) => (
               <motion.div
                 key={comparison.scenario}

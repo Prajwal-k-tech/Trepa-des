@@ -26,11 +26,10 @@ export default function HeroSection() {
     const filledBars = Math.round((percentage / 100) * bars)
     return Array.from({ length: bars }, (_, i) => i < filledBars)
   }
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background/95 to-muted/30">
       {/* Animated background effects inspired by the reference image */}
-      <div className="absolute inset-0 w-full h-full">        {/* Neural network lines - optimized for performance */}
+      <div className="absolute inset-0 w-full h-full">{/* Neural network lines - optimized for performance */}
         <div className="absolute inset-0 opacity-10">
           {[...Array(reduceMotion ? 8 : 20)].map((_, i) => (
             <motion.div
@@ -76,11 +75,9 @@ export default function HeroSection() {
               }}
             />
           ))}
-        </div>
-
-        {/* Large gradient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/3 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        </div>        {/* Large gradient orbs - responsive sizing */}
+        <div className="absolute top-1/4 left-1/4 w-48 h-48 md:w-96 md:h-96 bg-primary/8 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 md:w-96 md:h-96 bg-primary/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -209,12 +206,11 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
           className="max-w-2xl mx-auto mt-20"
-        >
-          <Card className="bg-card border-border p-8">
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 mb-6">
-                <Target className="w-6 h-6 text-primary" />
-                <h3 className="font-poppins text-2xl font-bold text-card-foreground">
+        >          <Card className="bg-card/50 border-border backdrop-blur-sm p-4 sm:p-6 lg:p-8 gradient-blur">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <Target className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                <h3 className="font-poppins text-xl sm:text-2xl font-bold text-card-foreground">
                   Predict Inflation Rate
                 </h3>
               </div>
@@ -278,14 +274,13 @@ export default function HeroSection() {
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                >
-                  <Button 
+                >                  <Button 
                     size="lg"
-                    className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground font-poppins font-bold text-xl py-6 group relative overflow-hidden"
+                    className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground font-poppins font-bold text-lg sm:text-xl py-4 sm:py-6 group relative overflow-hidden button-glow"
                   >
-                    <div className="absolute inset-0 bg-white/10 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                    <Zap className="mr-2 w-6 h-6" />
-                    Stake Your Prediction
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                    <Zap className="mr-2 w-5 h-5 sm:w-6 sm:h-6 relative" />
+                    <span className="relative">Stake Your Prediction</span>
                   </Button>
                 </motion.div>
               </div>
