@@ -3,9 +3,8 @@ import { Twitter, Github, Mail, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const Footer = () => {
-  return (
-    <footer className="bg-trepa-muted border-t border-trepa-muted-foreground/10">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+  return (    <footer className="bg-muted/50 border-t border-border backdrop-blur-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-4 gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-2 space-y-6">
@@ -16,8 +15,8 @@ const Footer = () => {
                 className="h-8 w-auto"
               />
             </div>
-            <p className="font-inter text-trepa-muted-foreground max-w-md leading-relaxed">
-              The world's first precision predictions platform. Don't just be right, be accurate.
+            <p className="font-inter text-muted-foreground max-w-md leading-relaxed">
+              The world's first <span className="accuracy-highlight">precision predictions</span> platform. Don't just be right, be <span className="accuracy-highlight">accurate</span>.
             </p>
             <div className="flex space-x-4">
               <motion.a
@@ -25,14 +24,14 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
-                className="w-10 h-10 bg-trepa-background rounded-lg flex items-center justify-center text-trepa-muted-foreground hover:text-trepa-primary hover:bg-trepa-primary/10 transition-colors"
+                className="w-10 h-10 bg-background rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors button-glow"
               >
                 <Twitter className="w-5 h-5" />
               </motion.a>
               <motion.a
                 href="mailto:hello@trepa.io"
                 whileHover={{ scale: 1.1 }}
-                className="w-10 h-10 bg-trepa-background rounded-lg flex items-center justify-center text-trepa-muted-foreground hover:text-trepa-primary hover:bg-trepa-primary/10 transition-colors"
+                className="w-10 h-10 bg-background rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors button-glow"
               >
                 <Mail className="w-5 h-5" />
               </motion.a>
@@ -41,27 +40,26 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-6">
-            <h3 className="font-poppins text-lg font-semibold text-trepa-foreground">
+            <h3 className="font-poppins text-lg font-semibold text-foreground">
               Platform
             </h3>
             <ul className="space-y-3">
               <li>
-                <a href="#how-it-works" className="font-inter text-trepa-muted-foreground hover:text-trepa-primary transition-colors">
+                <a href="#how-it-works" className="font-inter text-muted-foreground hover:text-primary transition-colors">
                   How It Works
-                </a>
-              </li>
+                </a>              </li>
               <li>
-                <a href="#features" className="font-inter text-trepa-muted-foreground hover:text-trepa-primary transition-colors">
+                <a href="#features" className="font-inter text-muted-foreground hover:text-primary transition-colors">
                   Features
                 </a>
               </li>
               <li>
-                <a href="#beta" className="font-inter text-trepa-muted-foreground hover:text-trepa-primary transition-colors">
+                <a href="#beta" className="font-inter text-muted-foreground hover:text-primary transition-colors">
                   Beta Access
                 </a>
               </li>
               <li>
-                <a href="#" className="font-inter text-trepa-muted-foreground hover:text-trepa-primary transition-colors">
+                <a href="#" className="font-inter text-muted-foreground hover:text-primary transition-colors">
                   Documentation
                 </a>
               </li>
@@ -70,10 +68,10 @@ const Footer = () => {
 
           {/* Newsletter Signup */}
           <div className="space-y-6">
-            <h3 className="font-poppins text-lg font-semibold text-trepa-foreground">
+            <h3 className="font-poppins text-lg font-semibold text-foreground">
               Stay Updated
             </h3>
-            <p className="font-inter text-trepa-muted-foreground text-sm">
+            <p className="font-inter text-muted-foreground text-sm">
               Get the latest updates on our beta launch and new features.
             </p>
             <div className="space-y-3">
