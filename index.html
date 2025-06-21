@@ -1,21 +1,60 @@
 <!doctype html>
-<html lang="en">
-  <head>
+<html lang="en">  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trepa</title>
+    <title>Trepa - Precision Prediction Platform | Get Rewarded for Accuracy</title>
+    <meta name="description" content="Trepa revolutionizes prediction markets with precision-based rewards. From predicting vibes to forecasting real-world numbers - the closer you are, the more you win." />
+    <meta name="keywords" content="prediction markets, precision forecasting, accuracy rewards, crypto predictions, financial forecasting, beta trading" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://prajwal-k-tech.github.io/Trepa-des/" />
+    <meta property="og:title" content="Trepa - Precision Prediction Platform" />
+    <meta property="og:description" content="Get rewarded for accuracy, not just being right. Experience the future of prediction markets." />
+    <meta property="og:image" content="https://prajwal-k-tech.github.io/Trepa-des/Trepa_logo_white.svg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://prajwal-k-tech.github.io/Trepa-des/" />
+    <meta property="twitter:title" content="Trepa - Precision Prediction Platform" />
+    <meta property="twitter:description" content="Get rewarded for accuracy, not just being right. Experience the future of prediction markets." />
+    <meta property="twitter:image" content="https://prajwal-k-tech.github.io/Trepa-des/Trepa_logo_white.svg" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/Trepa-des/Trepa_icon_square_white_no_padding.svg" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/Trepa-des/assets/index-CL3Nvv_E.js"></script>
+    <script type="module" crossorigin src="/Trepa-des/assets/index-BC12DQ0o.js"></script>
     <link rel="stylesheet" crossorigin href="/Trepa-des/assets/index-B0jc0rve.css">
-  </head>
-
-  <body>
-    <div id="root"></div>
+  </head>  <body>
+    <div id="root">
+      <!-- Loading spinner while React loads -->
+      <div style="display: flex; justify-content: center; align-items: center; height: 100vh; background: #0a0a0a;">
+        <div style="width: 40px; height: 40px; border: 3px solid rgba(139, 195, 74, 0.3); border-top: 3px solid #8bc34a; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+      </div>
+      <style>
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      </style>
+    </div>
 
+    
+    <!-- Simple performance monitoring -->
+    <script>
+      // Log performance metrics for optimization
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const perfData = performance.getEntriesByType('navigation')[0];
+          console.log('Page Load Time:', perfData.loadEventEnd - perfData.fetchStart, 'ms');
+        }, 0);
+      });
+    </script>
   </body>
 </html>
