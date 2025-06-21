@@ -17,10 +17,10 @@ export default {
         "2xl": "1400px",
       },
     },
-    extend: {
-      fontFamily: {
+    extend: {      fontFamily: {
         sans: ["Inter", "sans-serif"],
-        heading: ["Poppins", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -31,11 +31,14 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-        },
-        trepa: {
-          green: "#84d62a",
-          "green-dark": "#6bb020",
-          "green-light": "#a3e842",
+        },        trepa: {
+          primary: "#84d62a", // OKLCH converted to hex approximation
+          background: "#000000",
+          foreground: "#e7e9ea",
+          secondary: "#f0f3f4",
+          "secondary-foreground": "#0f1419",
+          muted: "#181818",
+          "muted-foreground": "#72767a",
         },
       },
       backgroundImage: {

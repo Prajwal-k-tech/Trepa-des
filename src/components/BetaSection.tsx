@@ -1,0 +1,213 @@
+import { useState } from "react"
+import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Card } from "@/components/ui/card"
+import { ArrowRight, CheckCircle, Mail, Users, Rocket } from "lucide-react"
+
+export default function BetaSection() {
+  const [email, setEmail] = useState("")
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Handle beta signup logic here
+    setIsSubmitted(true)
+  }
+
+  const benefits = [
+    "Early access to all prediction markets",
+    "Zero platform fees during beta",
+    "Exclusive beta user rewards",
+    "Direct feedback channel to our team"
+  ]
+
+  const stats = [
+    { number: "2,500+", label: "Beta Signups" },
+    { number: "15", label: "Markets Ready" },
+    { number: "$50K", label: "Prize Pool" }
+  ]
+
+  return (
+    <section className="py-20 bg-gradient-to-br from-trepa-background via-trepa-muted to-trepa-background">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="font-poppins text-4xl md:text-6xl font-bold text-trepa-foreground mb-6">
+            Join the <span className="text-trepa-primary">Beta</span>
+          </h2>
+          <p className="font-inter text-xl text-trepa-muted-foreground max-w-3xl mx-auto">
+            Be among the first to experience precision predictions. Limited spots available for our public beta launch.
+          </p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Beta Signup Form */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <Card className="bg-trepa-muted border-trepa-primary/20 p-8">
+              {!isSubmitted ? (
+                <div className="space-y-6">
+                  <div className="space-y-4">
+                    <h3 className="font-poppins text-2xl font-bold text-trepa-foreground">
+                      Get Early Access
+                    </h3>
+                    <p className="font-inter text-trepa-muted-foreground">
+                      Join our waitlist and be notified when beta launches. Plus, get exclusive perks as an early user.
+                    </p>
+                  </div>
+
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="relative">
+                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-trepa-muted-foreground" />
+                      <Input
+                        type="email"
+                        placeholder="Enter your email address"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="pl-12 bg-trepa-background border-trepa-muted-foreground/30 text-trepa-foreground placeholder:text-trepa-muted-foreground focus:border-trepa-primary"
+                        required
+                      />
+                    </div>
+                    <Button 
+                      type="submit"
+                      className="w-full bg-trepa-primary hover:bg-trepa-primary/90 text-white font-poppins font-bold text-lg py-3 group"
+                    >
+                      <Rocket className="mr-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
+                      Join Beta Waitlist
+                      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </form>
+
+                  <div className="space-y-3">
+                    <h4 className="font-poppins font-semibold text-trepa-foreground">
+                      Beta Benefits:
+                    </h4>
+                    <ul className="space-y-2">
+                      {benefits.map((benefit, index) => (
+                        <motion.li
+                          key={benefit}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: index * 0.1 }}
+                          className="flex items-center gap-3 font-inter text-trepa-muted-foreground"
+                        >
+                          <CheckCircle className="w-5 h-5 text-trepa-primary flex-shrink-0" />
+                          {benefit}
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ) : (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="text-center space-y-6 py-8"
+                >
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+                  >
+                    <CheckCircle className="w-16 h-16 text-trepa-primary mx-auto" />
+                  </motion.div>
+                  <div>
+                    <h3 className="font-poppins text-2xl font-bold text-trepa-foreground mb-2">
+                      You're In!
+                    </h3>
+                    <p className="font-inter text-trepa-muted-foreground">
+                      Thanks for joining the beta waitlist. We'll notify you as soon as spots open up.
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+            </Card>
+          </motion.div>
+
+          {/* Stats and Info */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            {/* Stats Grid */}
+            <div className="grid grid-cols-3 gap-6">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="text-center"
+                >
+                  <Card className="bg-trepa-background border-trepa-primary/20 p-4">
+                    <div className="font-poppins text-2xl md:text-3xl font-bold text-trepa-primary">
+                      {stat.number}
+                    </div>
+                    <div className="font-inter text-sm text-trepa-muted-foreground mt-1">
+                      {stat.label}
+                    </div>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Beta Timeline */}
+            <Card className="bg-trepa-background border-trepa-primary/20 p-6">
+              <h4 className="font-poppins text-xl font-bold text-trepa-foreground mb-4 flex items-center gap-2">
+                <Users className="w-5 h-5 text-trepa-primary" />
+                Beta Timeline
+              </h4>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-3 h-3 bg-trepa-primary rounded-full"></div>
+                  <div>
+                    <div className="font-inter font-semibold text-trepa-foreground">Q1 2025</div>
+                    <div className="font-inter text-sm text-trepa-muted-foreground">Private Beta Launch</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-3 h-3 bg-trepa-primary/50 rounded-full"></div>
+                  <div>
+                    <div className="font-inter font-semibold text-trepa-foreground">Q2 2025</div>
+                    <div className="font-inter text-sm text-trepa-muted-foreground">Public Beta + Mobile App</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-3 h-3 bg-trepa-muted-foreground rounded-full"></div>
+                  <div>
+                    <div className="font-inter font-semibold text-trepa-foreground">Q3 2025</div>
+                    <div className="font-inter text-sm text-trepa-muted-foreground">Full Platform Launch</div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            {/* Social Proof */}
+            <div className="text-center">
+              <p className="font-inter text-trepa-muted-foreground mb-4">
+                Join prediction experts from:
+              </p>
+              <div className="flex justify-center items-center gap-8 opacity-60">
+                <div className="font-poppins font-bold text-trepa-foreground">Goldman Sachs</div>
+                <div className="font-poppins font-bold text-trepa-foreground">McKinsey</div>
+                <div className="font-poppins font-bold text-trepa-foreground">Citadel</div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}

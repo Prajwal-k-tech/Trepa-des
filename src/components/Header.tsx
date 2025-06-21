@@ -1,56 +1,102 @@
-import { Button } from "@/components/ui/button";
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Menu, X } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 
 const Header = () => {
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-gray-800">
-      <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div>
-            <span className="text-xl font-bold font-heading text-white">
-              Trepa
-            </span>
-          </div>
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-          {/* Navigation */}
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-trepa-background/80 backdrop-blur-md border-b border-trepa-muted-foreground/10">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="flex items-center"
+          >
+            <img 
+              src="/Trepa_logo_white.svg" 
+              alt="Trepa" 
+              className="h-8 w-auto"
+            />
+          </motion.div>
+
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a
-              href="#how-it-works"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
+            <a href="#how-it-works" className="font-inter text-trepa-foreground hover:text-trepa-primary transition-colors">
               How It Works
             </a>
-            <a
-              href="#why-trepa"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Why Trepa?
+            <a href="#features" className="font-inter text-trepa-foreground hover:text-trepa-primary transition-colors">
+              Features
             </a>
-            <a
-              href="#blog"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Blog
-            </a>
-            <a
-              href="#contact"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Contact
+            <a href="#beta" className="font-inter text-trepa-foreground hover:text-trepa-primary transition-colors">
+              Beta
             </a>
           </nav>
 
-          {/* CTA Button */}
-          <Button className="bg-green-500 hover:bg-green-600 text-black px-6 py-2 rounded-full font-medium">
-            Join Beta
-          </Button>
+          {/* Desktop CTA */}          <div className="hidden md:flex items-center space-x-4">
+            <Button 
+              variant="ghost" 
+              className="text-trepa-foreground hover:text-trepa-primary hover:bg-trepa-muted font-inter"
+            >
+              Connect Wallet
+            </Button>
+            <Button 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-inter font-semibold"
+            >
+              Join Beta
+            </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden text-trepa-foreground hover:text-trepa-primary"
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden bg-trepa-background border-t border-trepa-muted-foreground/10"
+            >
+              <div className="py-4 space-y-4">
+                <a href="#how-it-works" className="block font-inter text-trepa-foreground hover:text-trepa-primary transition-colors">
+                  How It Works
+                </a>
+                <a href="#features" className="block font-inter text-trepa-foreground hover:text-trepa-primary transition-colors">
+                  Features
+                </a>
+                <a href="#beta" className="block font-inter text-trepa-foreground hover:text-trepa-primary transition-colors">
+                  Beta
+                </a>                <div className="pt-4 border-t border-trepa-muted-foreground/10 space-y-2">
+                  <Button 
+                    variant="ghost" 
+                    className="w-full justify-start text-trepa-foreground hover:text-trepa-primary hover:bg-trepa-muted font-inter"
+                  >
+                    Connect Wallet
+                  </Button>
+                  <Button 
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-inter font-semibold"
+                  >
+                    Join Beta
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

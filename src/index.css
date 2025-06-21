@@ -1,33 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   /**
-   * Tailwind CSS theme
-   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
-   * A different format will require also updating the theme in tailwind.config.ts.
+   * Tailwind CSS theme - Trepa Brand Colors
+   * Using Trepa's brand color palette
   */
   :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 93%;
+    --background: 0 0% 0%; /* #000000 */
+    --foreground: 218 11% 91%; /* #e7e9ea */
 
-    --card: 240 5% 15%;
-    --card-foreground: 0 0% 88%;
+    --card: 0 0% 9%; /* #181818 */
+    --card-foreground: 0 0% 91%; /* #e7e9ea */
 
-    --popover: 240 5% 15%;
-    --popover-foreground: 0 0% 88%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 91%;    --primary: 126.65 14.35% 87.16%; /* oklch(0.8716 0.1435 126.6456) - Trepa Green */
+    --primary-foreground: 248.51 1.28% 18.84%; /* oklch(0.1884 0.0128 248.5103) */
 
-    --primary: 126 82% 70%;
-    --primary-foreground: 0 0% 0%;
+    --secondary: 204 20% 94%; /* #f0f3f4 */
+    --secondary-foreground: 203 80% 8%; /* #0f1419 */
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 9%; /* #181818 */
+    --muted-foreground: 210 7% 46%; /* #72767a */
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
-
-    --accent: 126 82% 70%;
+    --accent: 337 100% 66%;
     --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
