@@ -12,7 +12,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
+          <h1 className="text-5xl md:text-7xl font-bold font-heading leading-tight mb-8">
             <span className="text-white">From predicting vibes to</span>
             <br />
             <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
@@ -37,7 +37,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6">
                 <span className="text-white">Precision Matters,</span>
                 <br />
                 <span className="text-trepa-green">Proximity Rewarded</span>
@@ -76,7 +76,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6">
                 <span className="text-white">Slide and Stake: </span>
                 <span className="text-trepa-green">How It Works</span>
               </h2>
@@ -131,7 +131,7 @@ const Index = () => {
       <section id="why-trepa" className="py-20 px-6 border-t border-gray-800">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4">
               <span className="text-white">Why </span>
               <span className="text-pink-500">Trepa?</span>
             </h2>
