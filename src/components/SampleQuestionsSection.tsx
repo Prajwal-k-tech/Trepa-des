@@ -47,6 +47,41 @@ export default function SampleQuestionsSection() {
     }
   ]
 
+  const getCategoryColor = (category: string) => {
+    switch (category) {
+      case "Economics": return {
+        bg: "from-emerald-500/10 to-green-600/5",
+        border: "border-emerald-500/20",
+        icon: "text-emerald-400",
+        badge: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+      }
+      case "Markets": return {
+        bg: "from-blue-500/10 to-cyan-600/5", 
+        border: "border-blue-500/20",
+        icon: "text-blue-400",
+        badge: "bg-blue-500/10 text-blue-400 border-blue-500/20"
+      }
+      case "Climate": return {
+        bg: "from-orange-500/10 to-red-600/5",
+        border: "border-orange-500/20", 
+        icon: "text-orange-400",
+        badge: "bg-orange-500/10 text-orange-400 border-orange-500/20"
+      }
+      case "Demographics": return {
+        bg: "from-purple-500/10 to-pink-600/5",
+        border: "border-purple-500/20",
+        icon: "text-purple-400", 
+        badge: "bg-purple-500/10 text-purple-400 border-purple-500/20"
+      }
+      default: return {
+        bg: "from-gray-500/10 to-gray-600/5",
+        border: "border-gray-500/20",
+        icon: "text-gray-400",
+        badge: "bg-gray-500/10 text-gray-400 border-gray-500/20"
+      }
+    }
+  }
+
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case "Easy": return "text-green-400"
@@ -59,8 +94,13 @@ export default function SampleQuestionsSection() {
 
   return (
     <section className="py-20 relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background"></div>
+      {/* Darker, more subtle background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+      
+      {/* Very subtle floating decorative elements */}
+      <div className="absolute top-20 left-20 w-1 h-1 bg-emerald-400/20 rounded-full floating-particle" />
+      <div className="absolute top-1/2 right-32 w-0.5 h-0.5 bg-blue-400/15 rounded-full floating-particle" style={{ animationDelay: '3s' }} />
+      <div className="absolute bottom-1/3 left-1/3 w-1 h-1 bg-purple-400/10 rounded-full floating-particle" style={{ animationDelay: '6s' }} />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -79,75 +119,81 @@ export default function SampleQuestionsSection() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {sampleQuestions.map((question, index) => (
-            <motion.div
-              key={question.question}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <Card className="bg-card/50 border-border/50 backdrop-blur-sm hover:bg-card/70 transition-all duration-300 group gradient-blur">
-                <div className="p-6 space-y-4">
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-lg bg-primary/10 border border-primary/20">
-                        <question.icon className="w-5 h-5 text-primary" />
+          {sampleQuestions.map((question, index) => {
+            const categoryColors = getCategoryColor(question.category)
+            return (
+              <motion.div
+                key={question.question}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card className={`frosted-glass-light hover:bg-gradient-to-br hover:${categoryColors.bg} transition-all duration-500 group border-2 ${categoryColors.border} backdrop-blur-xl relative overflow-hidden`}>
+                  {/* Glassmorphism overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${categoryColors.bg} opacity-30 pointer-events-none`} />
+                  
+                  <div className="relative z-10 p-6 space-y-4">
+                    <div className="flex items-start justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className={`p-3 rounded-xl bg-gradient-to-br ${categoryColors.bg} backdrop-blur-sm border ${categoryColors.border} shadow-lg`}>
+                          <question.icon className={`w-5 h-5 ${categoryColors.icon}`} />
+                        </div>
+                        <div>
+                          <span className={`text-xs font-medium px-3 py-1.5 rounded-full border ${categoryColors.badge}`}>
+                            {question.category}
+                          </span>
+                          <span className={`ml-2 text-xs font-medium px-2 py-1 rounded-full ${getDifficultyColor(question.difficulty)} bg-current/10 border border-current/20`}>
+                            {question.difficulty}
+                          </span>
+                        </div>
                       </div>
-                      <div>
-                        <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
-                          {question.category}
+                    </div>
+
+                    <h3 className="font-poppins text-lg font-semibold text-card-foreground leading-tight group-hover:text-white transition-colors duration-300">
+                      {question.question}
+                    </h3>
+
+                    <div className="grid grid-cols-2 gap-4 py-4 border-t border-border/30">
+                      <div className="space-y-1">
+                        <p className="text-xs text-muted-foreground">Crowd Prediction</p>
+                        <p className={`font-bold text-lg ${categoryColors.icon}`}>{question.currentPrediction}</p>
+                      </div>
+                      <div className="space-y-1">
+                        <p className="text-xs text-muted-foreground">Prize Pool</p>
+                        <p className="font-bold text-emerald-400 text-lg">{question.prize}</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between pt-2">
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                        <span className="flex items-center gap-1">
+                          <Users className="w-4 h-4" />
+                          {question.participants.toLocaleString()}
                         </span>
-                        <span className={`ml-2 text-xs font-medium px-2 py-1 rounded-full ${getDifficultyColor(question.difficulty)} bg-current/10`}>
-                          {question.difficulty}
+                        <span className="flex items-center gap-1">
+                          <Calendar className="w-4 h-4" />
+                          {question.timeLeft}
                         </span>
                       </div>
                     </div>
-                  </div>
 
-                  <h3 className="font-poppins text-lg font-semibold text-card-foreground leading-tight">
-                    {question.question}
-                  </h3>
-
-                  <div className="grid grid-cols-2 gap-4 py-4 border-t border-border/30">
-                    <div>
-                      <p className="text-xs text-muted-foreground">Crowd Prediction</p>
-                      <p className="font-bold text-primary text-lg">{question.currentPrediction}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-muted-foreground">Prize Pool</p>
-                      <p className="font-bold text-foreground text-lg">{question.prize}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between pt-2">
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                      <span className="flex items-center gap-1">
-                        <Users className="w-4 h-4" />
-                        {question.participants.toLocaleString()}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        {question.timeLeft}
-                      </span>
-                    </div>
-                  </div>
-
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Button 
-                      className="w-full bg-gradient-to-r from-primary/80 to-primary hover:from-primary hover:to-primary/90 text-primary-foreground font-medium button-glow"
-                      variant="default"
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                     >
-                      Make Your Prediction
-                    </Button>
-                  </motion.div>
-                </div>
-              </Card>
-            </motion.div>
-          ))}
+                      <Button 
+                        className={`w-full bg-gradient-to-r ${categoryColors.bg} hover:bg-gradient-to-br hover:${categoryColors.bg} text-white font-medium border ${categoryColors.border} backdrop-blur-sm transition-all duration-300 shadow-lg hover:shadow-xl`}
+                        variant="outline"
+                      >
+                        Make Your Prediction
+                      </Button>
+                    </motion.div>
+                  </div>
+                </Card>
+              </motion.div>
+            )
+          })}
         </div>
 
         <motion.div

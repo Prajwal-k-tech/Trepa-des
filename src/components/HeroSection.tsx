@@ -63,14 +63,14 @@ export default function HeroSection() {
             className="space-y-8 max-w-5xl mx-auto"
           >
             <p className="font-poppins text-lg md:text-xl font-semibold text-foreground">
-              The closer you are, the more you win.
+              Don't just be right. Be <span className="accuracy-highlight">precise</span>.
             </p>
             <h1 className="font-poppins text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-foreground">
               Flex your foresight. Get rewarded for <span className="accuracy-highlight">accuracy.</span>
             </h1>
             
             <p className="font-inter text-lg md:text-xl leading-relaxed text-muted-foreground max-w-3xl mx-auto">
-              Trepa is a social predictions platform where you predict public sentiment on fun and thought provoking questions. It's like reading the room but with rewards! Think you know what the crowd really thinks? Prove it.
+              Traditional prediction markets only care about right vs wrong. We believe precision should be rewarded. Predict how inflation rates, market prices, and economic indicators will move - and get paid based on how close you are, not just if you're exactly right.
             </p>
           </motion.div>
 
@@ -91,8 +91,7 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Interactive Demo Section - Commented out for now to match the new design focus */}\
-        {/*
+        {/* Interactive Demo Section - Core "Slide & Stake" Experience */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -106,14 +105,14 @@ export default function HeroSection() {
                   <TrendingUp className="w-5 h-5 text-white" />
                 </div>
                 <h3 className="font-poppins text-xl sm:text-2xl font-bold text-foreground">
-                  Predict Inflation Rate
+                  Try It: Predict Inflation Rate
                 </h3>
               </div>
               
               <div className="space-y-4">
                 <div>
                   <label className="font-inter mb-3 block text-lg text-foreground">
-                    Your Prediction: <span className="accuracy-highlight font-bold text-xl">{prediction[0].toFixed(1)}%</span>
+                    Slide to Your Prediction: <span className="accuracy-highlight font-bold text-xl">{prediction[0].toFixed(1)}%</span>
                   </label>
                   <div className="px-2">
                     <Slider
@@ -138,7 +137,7 @@ export default function HeroSection() {
                 >
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
-                      <span className="font-inter text-muted-foreground">Potential Payout:</span>
+                      <span className="font-inter text-muted-foreground">Your Accuracy Reward:</span>
                       <span className="font-poppins text-primary font-bold text-2xl">{payout.toFixed(0)}%</span>
                     </div>
                     
@@ -161,9 +160,9 @@ export default function HeroSection() {
                           difference <= 0.5 ? 'text-green-400' : 
                           difference <= 1.0 ? 'text-yellow-400' : 'text-orange-400'
                         }`}>
-                          {difference <= 0.5 ? 'High reward - very close!' : 
-                           difference <= 1.0 ? 'Good reward - close enough' : 
-                           'Low reward if >1% off'}
+                          {difference <= 0.5 ? 'Excellent! Very close = big payout' : 
+                           difference <= 1.0 ? 'Good! Close enough for solid reward' : 
+                           'Still rewarded, but less for being further off'}
                         </span>
                       </p>
                     </div>
@@ -192,7 +191,6 @@ export default function HeroSection() {
             </p>
           </div>
         </motion.div>
-        */}
       </div>
     </section>
   )
