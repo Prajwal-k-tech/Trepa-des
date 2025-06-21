@@ -14,14 +14,110 @@ const Index = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 relative z-10">
         <div className="max-w-7xl mx-auto text-center relative">
-          {/* Floating brain-like illustration */}
-          <div className="absolute top-0 right-1/4 hidden lg:block">
-            <div className="relative">
-              <div className="w-32 h-32 rounded-full border-2 border-pink-500/30 border-dashed animate-spin-slow">
-                <div className="absolute inset-4 rounded-full border border-pink-500/20 border-dotted">
-                  <div className="absolute inset-2 rounded-full bg-gradient-to-br from-pink-500/10 to-purple-500/10 backdrop-blur-sm">
-                    <Brain className="w-8 h-8 text-pink-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                  </div>
+          {/* Sophisticated brain illustration */}
+          <div className="absolute -top-10 right-1/6 hidden xl:block">
+            <div className="relative w-48 h-48">
+              {/* Neural network connections */}
+              <svg
+                className="absolute inset-0 w-full h-full text-pink-500/20"
+                viewBox="0 0 200 200"
+              >
+                <defs>
+                  <linearGradient
+                    id="connectionGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stopColor="rgb(236 72 153 / 0.3)" />
+                    <stop offset="100%" stopColor="rgb(236 72 153 / 0.1)" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M30,50 Q100,30 170,70"
+                  stroke="url(#connectionGradient)"
+                  strokeWidth="1"
+                  fill="none"
+                  className="animate-pulse"
+                />
+                <path
+                  d="M40,120 Q100,80 160,130"
+                  stroke="url(#connectionGradient)"
+                  strokeWidth="1"
+                  fill="none"
+                  className="animate-pulse"
+                  style={{ animationDelay: "1s" }}
+                />
+                <path
+                  d="M60,160 Q120,140 180,160"
+                  stroke="url(#connectionGradient)"
+                  strokeWidth="1"
+                  fill="none"
+                  className="animate-pulse"
+                  style={{ animationDelay: "2s" }}
+                />
+                <circle
+                  cx="30"
+                  cy="50"
+                  r="3"
+                  fill="rgb(236 72 153 / 0.4)"
+                  className="animate-pulse"
+                />
+                <circle
+                  cx="170"
+                  cy="70"
+                  r="3"
+                  fill="rgb(236 72 153 / 0.4)"
+                  className="animate-pulse"
+                />
+                <circle
+                  cx="40"
+                  cy="120"
+                  r="3"
+                  fill="rgb(236 72 153 / 0.4)"
+                  className="animate-pulse"
+                  style={{ animationDelay: "1s" }}
+                />
+                <circle
+                  cx="160"
+                  cy="130"
+                  r="3"
+                  fill="rgb(236 72 153 / 0.4)"
+                  className="animate-pulse"
+                  style={{ animationDelay: "1s" }}
+                />
+                <circle
+                  cx="60"
+                  cy="160"
+                  r="3"
+                  fill="rgb(236 72 153 / 0.4)"
+                  className="animate-pulse"
+                  style={{ animationDelay: "2s" }}
+                />
+                <circle
+                  cx="180"
+                  cy="160"
+                  r="3"
+                  fill="rgb(236 72 153 / 0.4)"
+                  className="animate-pulse"
+                  style={{ animationDelay: "2s" }}
+                />
+              </svg>
+
+              {/* Brain outline */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="relative">
+                  <Brain className="w-20 h-20 text-pink-400/60 filter drop-shadow-lg" />
+                  <div className="absolute inset-0 bg-pink-500/20 rounded-full blur-xl"></div>
+                </div>
+              </div>
+
+              {/* Floating quote bubble */}
+              <div className="absolute -left-16 top-8 bg-gray-900/80 backdrop-blur-sm border border-pink-500/20 rounded-lg px-3 py-2 text-xs text-pink-300">
+                <div className="relative">
+                  I analyze sentiment with my empathy and psyops skills.
+                  <div className="absolute -right-1 top-3 w-2 h-2 bg-gray-900 border-r border-b border-pink-500/20 transform rotate-45"></div>
                 </div>
               </div>
             </div>
@@ -112,37 +208,41 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-8">
-              <h3 className="text-lg font-semibold mb-6 text-white">
-                Predict Next Week's US Inflation Rate (%)
-              </h3>
+            <div className="relative bg-gradient-to-br from-gray-900/60 to-gray-950/80 backdrop-blur-sm border border-gray-800/60 rounded-2xl p-8 shadow-2xl">
+              {/* Subtle glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-transparent rounded-2xl"></div>
+              <div className="relative z-10">
+                <h3 className="text-lg font-semibold mb-6 text-white">
+                  Predict Next Week's US Inflation Rate (%)
+                </h3>
 
-              <div className="mb-6">
-                <div className="text-sm text-gray-400 mb-2">
-                  Your Prediction: 5.0%
+                <div className="mb-6">
+                  <div className="text-sm text-gray-400 mb-2">
+                    Your Prediction: 5.0%
+                  </div>
+                  <div className="relative bg-gray-800 rounded-full h-2 mb-4">
+                    <div className="absolute left-0 top-0 h-full bg-gradient-to-r from-pink-500 to-pink-600 rounded-full w-1/2"></div>
+                    <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-pink-500 rounded-full border-2 border-white"></div>
+                  </div>
+                  <div className="flex justify-between text-xs text-gray-400">
+                    <span>0%</span>
+                    <span>10%</span>
+                  </div>
                 </div>
-                <div className="relative bg-gray-800 rounded-full h-2 mb-4">
-                  <div className="absolute left-0 top-0 h-full bg-gradient-to-r from-pink-500 to-pink-600 rounded-full w-1/2"></div>
-                  <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-pink-500 rounded-full border-2 border-white"></div>
+
+                <div className="mb-6">
+                  <div className="text-sm text-gray-400 mb-2">
+                    Potential Payout: 90% if actual = 5.0%
+                  </div>
+                  <div className="text-xs text-gray-500">
+                    Risk Level: Moderate (teens with prediction accuracy)
+                  </div>
                 </div>
-                <div className="flex justify-between text-xs text-gray-400">
-                  <span>0%</span>
-                  <span>10%</span>
-                </div>
+
+                <Button className="w-full bg-pink-500 hover:bg-pink-600 text-white py-3 rounded-lg font-medium shadow-lg shadow-pink-500/25">
+                  Stake
+                </Button>
               </div>
-
-              <div className="mb-6">
-                <div className="text-sm text-gray-400 mb-2">
-                  Potential Payout: 90% if actual = 5.0%
-                </div>
-                <div className="text-xs text-gray-500">
-                  Risk Level: Moderate (teens with prediction accuracy)
-                </div>
-              </div>
-
-              <Button className="w-full bg-pink-500 hover:bg-pink-600 text-white py-3 rounded-lg font-medium">
-                Stake
-              </Button>
             </div>
           </div>
         </div>
