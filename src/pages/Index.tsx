@@ -30,7 +30,7 @@ const Index = () => {
   const payoutPercentage = getPayoutPercentage(sliderValue);
 
   return (
-    <div className="min-h-screen bg-background text-foreground relative">
+    <div className="min-h-screen bg-black text-white relative">
       <BackgroundEffects />
       <Header />
 
@@ -38,11 +38,11 @@ const Index = () => {
       <section className="pt-32 pb-20 px-6 relative z-10">
         <div className="max-w-7xl mx-auto text-center relative">
           <h1 className="text-5xl md:text-7xl font-bold font-heading leading-tight mb-8 relative">
-            <span className="text-foreground drop-shadow-2xl">
+            <span className="text-white drop-shadow-2xl">
               From predicting vibes to
             </span>
             <br />
-            <span className="bg-gradient-to-r from-primary via-primary to-primary bg-clip-text text-transparent drop-shadow-lg">
+            <span className="bg-gradient-to-r from-green-400 via-green-500 to-green-600 bg-clip-text text-transparent drop-shadow-lg">
               forecasting real-world numbers.
             </span>
           </h1>
@@ -61,11 +61,11 @@ const Index = () => {
           </p>
 
           <div className="relative inline-block">
-            <Button className="bg-primary hover:bg-primary/80 text-primary-foreground px-8 py-4 rounded-full text-lg font-medium transition-all transform hover:scale-105 shadow-lg shadow-primary/25 relative z-10">
+            <Button className="bg-green-500 hover:bg-green-600 text-black px-8 py-4 rounded-full text-lg font-medium transition-all transform hover:scale-105 shadow-lg shadow-green-500/25 relative z-10">
               Join Beta Program
             </Button>
             {/* Glow effect */}
-            <div className="absolute inset-0 bg-primary rounded-full blur-xl opacity-30 -z-10 scale-110"></div>
+            <div className="absolute inset-0 bg-green-500 rounded-full blur-xl opacity-30 -z-10 scale-110"></div>
           </div>
         </div>
       </section>
