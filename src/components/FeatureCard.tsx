@@ -10,10 +10,10 @@ const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
   return (
     <div className="relative group">
       {/* Background with atmospheric effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 to-gray-950/60 backdrop-blur-sm border border-gray-800/50 rounded-2xl transition-all duration-300 group-hover:border-pink-500/30 group-hover:bg-gray-900/60"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 to-gray-950/60 backdrop-blur-sm border border-gray-800/50 rounded-2xl transition-all duration-300 group-hover:border-trepa-green/30 group-hover:bg-gray-900/60"></div>
 
       {/* Glow effect on hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-trepa-green/5 to-emerald-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
       {/* Content */}
       <div className="relative p-8">

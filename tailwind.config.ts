@@ -32,14 +32,10 @@ export default {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
-        pink: {
-          500: "#ff4081",
-          600: "#e91e63",
-        },
         trepa: {
-          pink: "#ff4081",
-          "pink-dark": "#e91e63",
           green: "#84d62a",
+          "green-dark": "#6bb020",
+          "green-light": "#a3e842",
         },
       },
       backgroundImage: {
