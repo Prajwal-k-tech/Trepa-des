@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Slider } from "@/components/ui/slider"
@@ -7,6 +7,15 @@ import { ArrowRight, TrendingUp, Target, Zap, Brain } from "lucide-react"
 
 export default function HeroSection() {
   const [prediction, setPrediction] = useState([4.9])
+  const [reduceMotion, setReduceMotion] = useState(false)
+  
+  useEffect(() => {
+    // Check for reduced motion preference and mobile devices for performance
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const isMobile = window.innerWidth < 768
+    setReduceMotion(prefersReducedMotion || isMobile)
+  }, [])
+  
   const actualValue = 5.0
   const difference = Math.abs(prediction[0] - actualValue)
   const accuracy = Math.max(0, 100 - (difference * 100))
@@ -21,10 +30,9 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Animated background effects inspired by the reference image */}
-      <div className="absolute inset-0 w-full h-full">
-        {/* Neural network lines */}
+      <div className="absolute inset-0 w-full h-full">        {/* Neural network lines - optimized for performance */}
         <div className="absolute inset-0 opacity-10">
-          {[...Array(20)].map((_, i) => (
+          {[...Array(reduceMotion ? 8 : 20)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute w-px bg-primary"
@@ -34,22 +42,21 @@ export default function HeroSection() {
                 height: `${Math.random() * 200 + 50}px`,
                 transform: `rotate(${Math.random() * 360}deg)`,
               }}
-              animate={{
+              animate={reduceMotion ? {} : {
                 opacity: [0.1, 0.3, 0.1],
                 scaleY: [1, 1.2, 1],
               }}
               transition={{
                 duration: 3 + Math.random() * 2,
-                repeat: Infinity,
+                repeat: reduceMotion ? 0 : Infinity,
                 delay: Math.random() * 2,
               }}
             />
           ))}
         </div>
-        
-        {/* Floating particles */}
+          {/* Floating particles - performance optimized */}
         <div className="absolute inset-0">
-          {[...Array(15)].map((_, i) => (
+          {[...Array(reduceMotion ? 8 : 15)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute w-1 h-1 bg-primary rounded-full"
@@ -57,14 +64,14 @@ export default function HeroSection() {
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
               }}
-              animate={{
+              animate={reduceMotion ? {} : {
                 y: [-20, 20, -20],
                 x: [-10, 10, -10],
                 opacity: [0.3, 0.7, 0.3],
               }}
               transition={{
                 duration: 4 + Math.random() * 2,
-                repeat: Infinity,
+                repeat: reduceMotion ? 0 : Infinity,
                 delay: Math.random() * 2,
               }}
             />
