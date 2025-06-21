@@ -198,7 +198,7 @@ const Index = () => {
                       }
                       className="w-full h-3 bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
                       style={{
-                        background: `linear-gradient(to right, oklch(var(--primary)) 0%, oklch(var(--primary)) ${(sliderValue / 10) * 100}%, rgb(55, 65, 81) ${(sliderValue / 10) * 100}%, rgb(55, 65, 81) 100%)`,
+                        background: `linear-gradient(to right, hsl(var(--primary)) 0%, hsl(var(--primary)) ${(sliderValue / 10) * 100}%, rgb(55, 65, 81) ${(sliderValue / 10) * 100}%, rgb(55, 65, 81) 100%)`,
                       }}
                     />
                     <div className="flex justify-between text-xs text-muted-foreground mt-2">

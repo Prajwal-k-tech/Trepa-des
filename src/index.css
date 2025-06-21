@@ -10,25 +10,25 @@
   */
   :root {
     --background: 0 0% 0%;
-    --foreground: 93.28% 0.0025 228.7857;
+    --foreground: 0 0% 93%;
 
-    --card: 15.53% 0.0042 285.8987;
-    --card-foreground: 88.53% 0 0;
+    --card: 240 5% 15%;
+    --card-foreground: 0 0% 88%;
 
-    --popover: 15.53% 0.0042 285.8987;
-    --popover-foreground: 88.53% 0 0;
+    --popover: 240 5% 15%;
+    --popover-foreground: 0 0% 88%;
 
-    --primary: 87.16% 0.1435 126.6456;
-    --primary-foreground: 18.84% 0.0128 248.5103;
+    --primary: 126 82% 70%;
+    --primary-foreground: 0 0% 0%;
 
     --secondary: 0 0% 10%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 87.16% 0.1435 126.6456;
-    --accent-foreground: 18.84% 0.0128 248.5103;
+    --accent: 126 82% 70%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
@@ -58,25 +58,25 @@
 
   .dark {
     --background: 0 0% 0%;
-    --foreground: 93.28% 0.0025 228.7857;
+    --foreground: 0 0% 93%;
 
-    --card: 15.53% 0.0042 285.8987;
-    --card-foreground: 88.53% 0 0;
+    --card: 240 5% 15%;
+    --card-foreground: 0 0% 88%;
 
-    --popover: 15.53% 0.0042 285.8987;
-    --popover-foreground: 88.53% 0 0;
+    --popover: 240 5% 15%;
+    --popover-foreground: 0 0% 88%;
 
-    --primary: 87.16% 0.1435 126.6456;
-    --primary-foreground: 18.84% 0.0128 248.5103;
+    --primary: 126 82% 70%;
+    --primary-foreground: 0 0% 0%;
 
     --secondary: 0 0% 10%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 87.16% 0.1435 126.6456;
-    --accent-foreground: 18.84% 0.0128 248.5103;
+    --accent: 126 82% 70%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
@@ -110,9 +110,9 @@
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: oklch(var(--primary));
+    background: hsl(var(--primary));
     cursor: pointer;
-    box-shadow: 0 0 10px oklch(var(--primary) / 0.5);
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.5);
     border: 2px solid white;
   }
 
@@ -120,9 +120,9 @@
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: oklch(var(--primary));
+    background: hsl(var(--primary));
     cursor: pointer;
-    box-shadow: 0 0 10px oklch(var(--primary) / 0.5);
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.5);
     border: 2px solid white;
   }
 }
