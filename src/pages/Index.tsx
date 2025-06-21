@@ -47,14 +47,14 @@ const Index = () => {
             </span>
           </h1>
 
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-12 leading-relaxed opacity-90">
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed opacity-90">
             You enter a point forecast, the exact number you think will be
             right. After the result is out, rewards scale based on how close
             your forecast is to the real value. The closer you are, the more you
             win.
           </p>
 
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
             Flex your foresight. Get rewarded for accuracy. Experience the new
             Trepa in our upcoming beta launch. Real questions. Real forecasting.
             Real rewards.
@@ -76,34 +76,34 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6">
-                <span className="text-foreground">Close </span>
-                <span className="text-primary">Still Pays</span>
+                <span className="text-white">Close </span>
+                <span className="text-green-500">Still Pays</span>
               </h2>
 
-              <p className="text-xl text-muted-foreground leading-relaxed mb-6">
+              <p className="text-xl text-gray-300 leading-relaxed mb-6">
                 Traditional prediction markets are binary—you're either right or
                 wrong. But reality isn't binary. Your insights have value even
                 when you're close.
               </p>
 
-              <p className="text-muted-foreground leading-relaxed mb-8">
+              <p className="text-gray-400 leading-relaxed mb-8">
                 Our precision model rewards you based on accuracy. Miss by 0.1%?
                 You still get most of the reward. Miss by 2%? You get something.
                 Miss by 10%? Well, you learned something for next time.
               </p>
 
               <div className="grid grid-cols-3 gap-4 text-center">
-                <div className="bg-card/50 rounded-lg p-4 border border-gray-800">
-                  <div className="text-primary text-2xl font-bold">90%</div>
-                  <div className="text-sm text-muted-foreground">0.1% off</div>
+                <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
+                  <div className="text-green-500 text-2xl font-bold">90%</div>
+                  <div className="text-sm text-gray-400">0.1% off</div>
                 </div>
-                <div className="bg-card/50 rounded-lg p-4 border border-gray-800">
-                  <div className="text-primary text-2xl font-bold">60%</div>
-                  <div className="text-sm text-muted-foreground">0.5% off</div>
+                <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
+                  <div className="text-green-500 text-2xl font-bold">60%</div>
+                  <div className="text-sm text-gray-400">0.5% off</div>
                 </div>
-                <div className="bg-card/50 rounded-lg p-4 border border-gray-800">
-                  <div className="text-primary text-2xl font-bold">30%</div>
-                  <div className="text-sm text-muted-foreground">1.0% off</div>
+                <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
+                  <div className="text-green-500 text-2xl font-bold">30%</div>
+                  <div className="text-sm text-gray-400">1.0% off</div>
                 </div>
               </div>
             </div>
