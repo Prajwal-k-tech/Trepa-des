@@ -44,7 +44,7 @@ const Header = () => {
           </nav>
 
           {/* CTA Button */}
-          <Button className="bg-primary hover:bg-primary/80 text-primary-foreground px-6 py-2 rounded-full font-medium">
+          <Button className="bg-green-500 hover:bg-green-600 text-black px-6 py-2 rounded-full font-medium">
             Join Beta
           </Button>
         </div>

@@ -301,8 +301,8 @@ const Index = () => {
 
             <FeatureCard
               icon={
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                  <Target className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center">
+                  <Target className="w-6 h-6 text-green-500" />
                 </div>
               }
               title="Real-World Impact"
@@ -311,8 +311,8 @@ const Index = () => {
 
             <FeatureCard
               icon={
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                  <Zap className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center">
+                  <Zap className="w-6 h-6 text-green-500" />
                 </div>
               }
               title="Instant Clarity"
@@ -326,24 +326,24 @@ const Index = () => {
       <section className="py-20 px-6 border-t border-gray-800/50 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6">
-            <span className="text-foreground">Ready to show your</span>
+            <span className="text-white">Ready to show your</span>
             <br />
-            <span className="text-primary">precision?</span>
+            <span className="text-green-500">precision?</span>
           </h2>
 
-          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+          <p className="text-xl text-gray-300 mb-8 leading-relaxed">
             Join the beta and experience the future of prediction markets. Where
             being close counts, and accuracy pays.
           </p>
 
           <div className="relative inline-block">
-            <Button className="bg-primary hover:bg-primary/80 text-primary-foreground px-12 py-4 rounded-full text-xl font-semibold transition-all transform hover:scale-105 shadow-xl shadow-primary/30">
+            <Button className="bg-green-500 hover:bg-green-600 text-black px-12 py-4 rounded-full text-xl font-semibold transition-all transform hover:scale-105 shadow-xl shadow-green-500/30">
               Join Beta
             </Button>
-            <div className="absolute inset-0 bg-primary rounded-full blur-xl opacity-40 -z-10 scale-110 animate-pulse"></div>
+            <div className="absolute inset-0 bg-green-500 rounded-full blur-xl opacity-40 -z-10 scale-110 animate-pulse"></div>
           </div>
 
-          <p className="text-sm text-muted-foreground mt-6">
+          <p className="text-sm text-gray-500 mt-6">
             Limited beta access • Web-based platform • No downloads required
           </p>
         </div>
