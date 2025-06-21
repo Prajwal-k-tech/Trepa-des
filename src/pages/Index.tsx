@@ -170,16 +170,16 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent rounded-2xl"></div>
 
               <div className="relative z-10">
-                <h3 className="text-2xl font-semibold mb-8 text-center text-card-foreground">
+                <h3 className="text-2xl font-semibold mb-8 text-center text-white">
                   Predict Next Month's US Inflation Rate
                 </h3>
 
                 {/* Current Prediction Display */}
                 <div className="text-center mb-8">
-                  <div className="text-sm text-muted-foreground mb-2">
+                  <div className="text-sm text-gray-400 mb-2">
                     Your Prediction
                   </div>
-                  <div className="text-4xl font-bold text-primary">
+                  <div className="text-4xl font-bold text-green-500">
                     {sliderValue.toFixed(1)}%
                   </div>
                 </div>
@@ -198,10 +198,10 @@ const Index = () => {
                       }
                       className="w-full h-3 bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
                       style={{
-                        background: `linear-gradient(to right, hsl(var(--primary)) 0%, hsl(var(--primary)) ${(sliderValue / 10) * 100}%, rgb(55, 65, 81) ${(sliderValue / 10) * 100}%, rgb(55, 65, 81) 100%)`,
+                        background: `linear-gradient(to right, #10b981 0%, #10b981 ${(sliderValue / 10) * 100}%, rgb(55, 65, 81) ${(sliderValue / 10) * 100}%, rgb(55, 65, 81) 100%)`,
                       }}
                     />
-                    <div className="flex justify-between text-xs text-muted-foreground mt-2">
+                    <div className="flex justify-between text-xs text-gray-400 mt-2">
                       <span>0%</span>
                       <span>2.5%</span>
                       <span>5%</span>
@@ -212,12 +212,10 @@ const Index = () => {
                 </div>
 
                 {/* Potential Payout Display */}
-                <div className="mb-8 p-6 bg-card/30 rounded-xl border border-gray-700">
+                <div className="mb-8 p-6 bg-gray-800/30 rounded-xl border border-gray-700">
                   <div className="flex justify-between items-center mb-4">
-                    <span className="text-muted-foreground">
-                      Potential Payout:
-                    </span>
-                    <span className="text-xl font-bold text-primary">
+                    <span className="text-gray-400">Potential Payout:</span>
+                    <span className="text-xl font-bold text-green-500">
                       {payoutPercentage}%
                     </span>
                   </div>
@@ -225,12 +223,12 @@ const Index = () => {
                   {/* Visual payout bar */}
                   <div className="w-full bg-gray-700 rounded-full h-3 mb-4">
                     <div
-                      className="bg-gradient-to-r from-primary to-primary h-3 rounded-full transition-all duration-300"
+                      className="bg-gradient-to-r from-green-500 to-green-600 h-3 rounded-full transition-all duration-300"
                       style={{ width: `${payoutPercentage}%` }}
                     ></div>
                   </div>
 
-                  <div className="text-sm text-muted-foreground text-center">
+                  <div className="text-sm text-gray-400 text-center">
                     {sliderValue === 5.0
                       ? "Perfect prediction! Maximum payout if actual = 5.0%"
                       : `${Math.abs(sliderValue - 5.0).toFixed(1)}% off from example target (5.0%)`}
@@ -240,35 +238,31 @@ const Index = () => {
                 {/* Risk Information */}
                 <div className="mb-8 space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">
-                      Exact match (5.0%):
-                    </span>
-                    <span className="text-primary font-semibold">
+                    <span className="text-gray-400">Exact match (5.0%):</span>
+                    <span className="text-green-500 font-semibold">
                       100% payout
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Within 0.1%:</span>
-                    <span className="text-primary">90% payout</span>
+                    <span className="text-gray-400">Within 0.1%:</span>
+                    <span className="text-green-500">90% payout</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Within 0.5%:</span>
+                    <span className="text-gray-400">Within 0.5%:</span>
                     <span className="text-yellow-400">60% payout</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">
-                      More than 1% off:
-                    </span>
+                    <span className="text-gray-400">More than 1% off:</span>
                     <span className="text-red-400">Low reward</span>
                   </div>
                 </div>
 
                 {/* Stake Button */}
-                <Button className="w-full bg-primary hover:bg-primary/80 text-primary-foreground py-4 rounded-xl text-lg font-bold shadow-lg shadow-primary/30 transition-all transform hover:scale-[1.02]">
+                <Button className="w-full bg-green-500 hover:bg-green-600 text-black py-4 rounded-xl text-lg font-bold shadow-lg shadow-green-500/30 transition-all transform hover:scale-[1.02]">
                   Stake $100
                 </Button>
 
-                <p className="text-xs text-muted-foreground text-center mt-4">
+                <p className="text-xs text-gray-500 text-center mt-4">
                   *Example for demonstration. Actual results determine final
                   payouts.
                 </p>
@@ -286,10 +280,10 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4">
-              <span className="text-foreground">Why </span>
-              <span className="text-primary">Trepa?</span>
+              <span className="text-white">Why </span>
+              <span className="text-green-500">Trepa?</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               The future of prediction markets is precision
             </p>
           </div>
@@ -297,8 +291,8 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard
               icon={
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                  <Trophy className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center">
+                  <Trophy className="w-6 h-6 text-green-500" />
                 </div>
               }
               title="Skill Over Luck"
