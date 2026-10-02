@@ -1,12 +1,13 @@
 {
   "name": "fusion-starter",
   "private": true,
-  "type": "module",  "scripts": {
+  "type": "module",
+  "scripts": {
     "dev": "vite",
     "build": "vite build",
     "test": "vitest --run",
     "format.fix": "prettier --write .",
-    "typecheck": "tsc",
+    "typecheck": "tsc -b",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
@@ -66,7 +67,8 @@
     "three": "^0.176.0",
     "vaul": "^0.9.3",
     "zod": "^3.23.8"
-  },  "devDependencies": {
+  },
+  "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^22.5.5",
     "@types/react": "^18.3.3",

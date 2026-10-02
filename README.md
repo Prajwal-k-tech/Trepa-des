@@ -9,7 +9,7 @@ A React/TypeScript landing-page prototype for a precision-based prediction-marke
 - Responsive navigation and client-side routing.
 - A local signup confirmation state. Email addresses are not submitted to a backend or saved by this application.
 
-Displayed signup counts, market counts, prize pools and adoption claims are sample marketing content, not verified product metrics. The UI illustrates a concept; it does not execute real trades, connect wallets, settle predictions or pay rewards.
+Displayed signup counts, market counts, prize pools and fictional testimonials are explicitly labeled illustrative, not verified product metrics. The UI illustrates a concept; it does not execute real trades, connect wallets, settle predictions or pay rewards.
 
 ## Run locally
 
@@ -22,6 +22,6 @@ Vite is configured on port 8080. `npm run build` creates `dist/`; `npm run previ
 
 ## Checks and limitations
 
-Build and runtime behavior have not yet been verified in this source review. The declared `typecheck` command runs `tsc` against a references-only root configuration; use `npx tsc -b` to check the referenced application and configuration projects. No test files were found in the source inventory, so the presence of Vitest is not evidence of test coverage.
+Production build and referenced TypeScript project checks passed on 2 October 2026. `npm run typecheck` runs `tsc -b`. Full browser interactions remain unverified. Dependency updates within existing ranges reduced npm audit findings from 19 to five; remaining Router, Vitest mocker and Picomatch findings need separate dependency review before deployment. No test files were found in the source inventory, so the presence of Vitest is not evidence of test coverage.
 
 The repository also contains design/specification files. They describe intended presentation, not delivered backend functionality. Template components and scaffolding should retain their upstream attribution.

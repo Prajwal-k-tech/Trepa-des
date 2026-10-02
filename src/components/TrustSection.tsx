@@ -47,6 +47,7 @@ export default function TrustSection() {
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p className="text-center text-muted-foreground mb-6">Design placeholders, not measured adoption, payouts or security guarantees.</p>
         {/* Stats Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -55,7 +56,7 @@ export default function TrustSection() {
           className="text-center mb-16"
         >
           <h2 className="font-poppins text-3xl sm:text-4xl font-bold mb-8">
-            Trusted by <span className="accuracy-highlight">Thousands</span>
+            Illustrative <span className="accuracy-highlight">Product Metrics</span>
           </h2>
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
@@ -89,7 +90,7 @@ export default function TrustSection() {
           className="mb-16"
         >
           <h3 className="font-poppins text-2xl sm:text-3xl font-bold text-center mb-12">
-            What Our Users Say
+            Fictional Testimonials
           </h3>
           
           <div className="grid md:grid-cols-3 gap-6">

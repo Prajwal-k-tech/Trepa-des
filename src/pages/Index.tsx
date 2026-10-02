@@ -12,6 +12,7 @@ const Index = () => {
     <div className="min-h-screen bg-background relative">
       <BackgroundEffects />
       <div className="relative z-10">
+        <p className="text-center p-3 text-sm bg-muted text-foreground">Landing-page prototype. Figures and testimonials are illustrative; no real trades or payouts.</p>
         <Header />
         <main>
           <HeroSection />

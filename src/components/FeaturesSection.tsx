@@ -204,7 +204,7 @@ export default function FeaturesSection() {  const features = [
               Ready to Show Your Precision?
             </h3>
             <p className="font-inter text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join thousands of predictors who are already earning more with accuracy-based rewards.
+              Explore the precision-based prediction-market concept.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

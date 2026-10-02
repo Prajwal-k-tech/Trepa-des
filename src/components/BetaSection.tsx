@@ -61,7 +61,7 @@ export default function BetaSection() {
                       Get Early Access
                     </h3>
                     <p className="font-inter text-muted-foreground">
-                      Join our beta and be notified when spots open. Plus, get exclusive perks as an early user.
+                      Try the signup interface. No email is sent or stored.
                     </p>
                   </div>
 
@@ -69,6 +69,7 @@ export default function BetaSection() {
                     <div className="relative">
                       <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                       <Input
+                        aria-label="Email address for signup preview"
                         type="email"
                         placeholder="Enter your email address"
                         value={email}
@@ -82,7 +83,7 @@ export default function BetaSection() {
                       className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-poppins font-bold text-lg py-3 group button-glow"
                     >
                       <Rocket className="mr-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
-                      Join Beta
+                      Preview signup
                       <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </form>                  <div className="space-y-3">
@@ -120,10 +121,10 @@ export default function BetaSection() {
                   </motion.div>
                   <div>
                     <h3 className="font-poppins text-2xl font-bold text-foreground mb-2">
-                      You're In!
+                      Preview complete
                     </h3>
                     <p className="font-inter text-muted-foreground">
-                      Thanks for joining the beta. We'll notify you as soon as spots open up.
+                      This demo does not save your email or register you for a beta.
                     </p>
                   </div>
                 </motion.div>
@@ -138,6 +139,7 @@ export default function BetaSection() {
             viewport={{ once: true }}
             className="space-y-8"
           >
+            <p className="text-sm text-muted-foreground">Sample figures for the landing-page concept.</p>
             {/* Stats Grid */}
             <div className="grid grid-cols-3 gap-6">
               {stats.map((stat, index) => (
@@ -161,11 +163,11 @@ export default function BetaSection() {
               ))}
             </div>
 
-            {/* Beta Timeline */}
+            {/* Illustrative Beta Timeline */}
             <Card className="bg-trepa-background border-trepa-primary/20 p-6">
               <h4 className="font-poppins text-xl font-bold text-trepa-foreground mb-4 flex items-center gap-2">
                 <Users className="w-5 h-5 text-trepa-primary" />
-                Beta Timeline
+                Illustrative Beta Timeline
               </h4>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
