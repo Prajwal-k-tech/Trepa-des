@@ -1,119 +1,53 @@
-import { motion } from "framer-motion"
-import { Twitter, Github, Mail, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Github, Mail } from "lucide-react"
 
-const Footer = () => {
-  return (    <footer className="bg-muted/50 border-t border-border backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-4 gap-12">
-          {/* Brand Section */}
-          <div className="lg:col-span-2 space-y-6">
-            <div className="flex items-center space-x-3">
-              <img 
-                src="/Trepa_logo_white.svg" 
-                alt="Trepa" 
-                className="h-8 w-auto"
-              />
-            </div>
-            <p className="font-inter text-muted-foreground max-w-md leading-relaxed">
-              The world's first <span className="accuracy-highlight">precision predictions</span> platform. Don't just be right, be <span className="accuracy-highlight">accurate</span>.
-            </p>
-            <div className="flex space-x-4">
-              <motion.a
-                href="https://twitter.com/trepa_io"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                className="w-10 h-10 bg-background rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors button-glow"
-              >
-                <Twitter className="w-5 h-5" />
-              </motion.a>
-              <motion.a
-                href="mailto:hello@trepa.io"
-                whileHover={{ scale: 1.1 }}
-                className="w-10 h-10 bg-background rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors button-glow"
-              >
-                <Mail className="w-5 h-5" />
-              </motion.a>
-            </div>
-          </div>
+const logoPath = import.meta.env.PROD
+  ? "/Trepa-des/Trepa_logo_white.svg"
+  : "/Trepa_logo_white.svg"
 
-          {/* Quick Links */}
-          <div className="space-y-6">
-            <h3 className="font-poppins text-lg font-semibold text-foreground">
-              Platform
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <a href="#how-it-works" className="font-inter text-muted-foreground hover:text-primary transition-colors">
-                  How It Works
-                </a>              </li>
-              <li>
-                <a href="#features" className="font-inter text-muted-foreground hover:text-primary transition-colors">
-                  Features
-                </a>
-              </li>
-              <li>
-                <a href="#beta" className="font-inter text-muted-foreground hover:text-primary transition-colors">
-                  Beta Access
-                </a>
-              </li>
-              <li>
-                <a href="#" className="font-inter text-muted-foreground hover:text-primary transition-colors">
-                  Documentation
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Newsletter Signup */}
-          <div className="space-y-6">
-            <h3 className="font-poppins text-lg font-semibold text-foreground">
-              Stay Updated
-            </h3>
-            <p className="font-inter text-muted-foreground text-sm">
-              Get the latest updates on our beta launch and new features.
-            </p>
-            <div className="space-y-3">
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Enter email"
-                  className="flex-1 px-3 py-2 bg-trepa-background border border-trepa-muted-foreground/30 rounded-l-lg text-trepa-foreground placeholder:text-trepa-muted-foreground focus:outline-none focus:border-trepa-primary font-inter text-sm"
-                />
-                <Button 
-                  size="sm"
-                  className="bg-trepa-primary hover:bg-trepa-primary/90 text-white px-4 rounded-l-none"
-                >
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </div>
-            </div>
+export default function Footer() {
+  return (
+    <footer className="border-t border-border bg-muted/50 backdrop-blur-sm">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+        <div className="space-y-4 md:col-span-2">
+          <a href="#top" aria-label="Trepa home" className="inline-flex items-center">
+            <img src={logoPath} alt="Trepa" className="h-8 w-auto" />
+          </a>
+          <p className="max-w-md leading-relaxed text-muted-foreground">
+            A precision-forecasting concept with a local, points-only practice demo. No live markets, wagers, or rewards are connected.
+          </p>
+          <div className="flex gap-3">
+            <a href="https://github.com/Prajwal-k-tech/Trepa-des" target="_blank" rel="noreferrer" aria-label="Trepa source on GitHub" className="rounded-lg bg-background p-2.5 text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+              <Github aria-hidden="true" className="h-5 w-5" />
+            </a>
+            <a href="mailto:hello@trepa.io" aria-label="Email Trepa" className="rounded-lg bg-background p-2.5 text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+              <Mail aria-hidden="true" className="h-5 w-5" />
+            </a>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-trepa-muted-foreground/10 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="font-inter text-trepa-muted-foreground text-sm">
-              © 2025 Trepa. All rights reserved.
-            </div>
-            <div className="flex space-x-6 text-sm">
-              <a href="#" className="font-inter text-trepa-muted-foreground hover:text-trepa-primary transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="font-inter text-trepa-muted-foreground hover:text-trepa-primary transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="font-inter text-trepa-muted-foreground hover:text-trepa-primary transition-colors">
-                Contact
-              </a>
-            </div>
-          </div>
+        <div>
+          <h2 className="mb-4 font-poppins font-semibold text-foreground">Explore</h2>
+          <ul className="space-y-3 text-muted-foreground">
+            <li><a href="#demo" className="transition-colors hover:text-primary">Practice demo</a></li>
+            <li><a href="#features" className="transition-colors hover:text-primary">How it works</a></li>
+            <li><a href="#examples" className="transition-colors hover:text-primary">Sample markets</a></li>
+            <li><a href="#beta" className="transition-colors hover:text-primary">Project scope</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 className="mb-4 font-poppins font-semibold text-foreground">Demo notes</h2>
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            Practice points are stored in your browser. Use the demo's reset control to clear them. This page does not ask for your email or wallet.
+          </p>
+        </div>
+      </div>
+      <div className="border-t border-border">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-5 text-sm text-muted-foreground sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+          <p>© {new Date().getFullYear()} Trepa concept demo</p>
+          <p>Built as a front-end preview · no real transactions</p>
         </div>
       </div>
     </footer>
   )
 }
-
-export default Footer;

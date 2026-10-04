@@ -1,102 +1,81 @@
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { AnimatePresence, motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { Button } from "@/components/ui/button"
 
-const Header = () => {
+const links = [
+  { href: "#demo", label: "Try the demo" },
+  { href: "#features", label: "How it works" },
+  { href: "#examples", label: "Examples" },
+  { href: "#beta", label: "About beta" },
+]
+
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const logoPath = import.meta.env.PROD ? "/Trepa-des/Trepa_logo_white.svg" : "/Trepa_logo_white.svg";
+  const logoPath = import.meta.env.PROD
+    ? "/Trepa-des/Trepa_logo_white.svg"
+    : "/Trepa_logo_white.svg"
 
-  return (    <header className="fixed top-0 left-0 right-0 z-50 glass-effect">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex items-center"
-          >
-            <img 
-              src={logoPath} 
-              alt="Trepa" 
-              className="h-8 w-auto"
-            />
-          </motion.div>
+  return (
+    <header className="sticky top-0 z-50 border-b border-border/70 glass-effect">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <a href="#top" aria-label="Trepa home" className="flex items-center">
+          <img src={logoPath} alt="Trepa" className="h-8 w-auto" />
+        </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#how-it-works" className="font-inter text-foreground hover:text-primary transition-colors font-medium">
-              How It Works
+        <nav aria-label="Main navigation" className="hidden items-center gap-7 md:flex">
+          {links.map((link) => (
+            <a key={link.href} href={link.href} className="font-inter font-medium text-foreground transition-colors hover:text-primary">
+              {link.label}
             </a>
-            <a href="#features" className="font-inter text-foreground hover:text-primary transition-colors font-medium">
-              Features
-            </a>
-            <a href="#beta" className="font-inter text-foreground hover:text-primary transition-colors font-medium">
-              Beta
-            </a>
-          </nav>
+          ))}
+        </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button 
-              variant="ghost" 
-              className="text-foreground hover:text-primary hover:bg-card font-inter border border-border"
-            >
-              Connect Wallet
-            </Button>
-            <Button 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-inter font-semibold button-glow"
-            >
-              Join Beta
-            </Button>
-          </div>          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-foreground hover:text-primary"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
+        <Button asChild className="hidden bg-primary font-inter font-semibold text-primary-foreground button-glow md:inline-flex">
+          <a href="#beta">Beta information</a>
+        </Button>
 
-        {/* Mobile Menu */}
+        <button
+          type="button"
+          aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setIsMenuOpen((open) => !open)}
+          className="rounded-md p-2 text-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
+        >
+          {isMenuOpen ? <X aria-hidden="true" className="h-6 w-6" /> : <Menu aria-hidden="true" className="h-6 w-6" />}
+        </button>
+      </div>
+
+      <div id="mobile-navigation" className="md:hidden">
         <AnimatePresence>
           {isMenuOpen && (
-            <motion.div
+            <motion.nav
+              aria-label="Mobile navigation"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden glass-effect border-t border-border"
+              className="overflow-hidden border-t border-border glass-effect"
             >
-              <div className="py-4 space-y-4">
-                <a href="#how-it-works" className="block font-inter text-foreground hover:text-primary transition-colors font-medium">
-                  How It Works
-                </a>
-                <a href="#features" className="block font-inter text-foreground hover:text-primary transition-colors font-medium">
-                  Features
-                </a>
-                <a href="#beta" className="block font-inter text-foreground hover:text-primary transition-colors font-medium">
-                  Beta
-                </a>
-                <div className="pt-4 border-t border-border space-y-2">
-                  <Button 
-                    variant="ghost" 
-                    className="w-full justify-start text-foreground hover:text-primary hover:bg-card font-inter border border-border"
+              <div className="mx-auto grid max-w-7xl gap-1 px-4 py-3 sm:px-6">
+                {links.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="rounded-md px-3 py-3 font-inter font-medium text-foreground transition-colors hover:bg-muted hover:text-primary"
                   >
-                    Connect Wallet
-                  </Button>
-                  <Button 
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-inter font-semibold button-glow"
-                  >
-                    Join Beta
-                  </Button>
-                </div>
+                    {link.label}
+                  </a>
+                ))}
+                <a href="#beta" onClick={() => setIsMenuOpen(false)} className="px-3 py-3 font-inter font-semibold text-primary">
+                  Beta information
+                </a>
               </div>
-            </motion.div>
+            </motion.nav>
           )}
         </AnimatePresence>
       </div>
     </header>
   )
 }
-
-export default Header

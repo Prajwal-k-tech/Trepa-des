@@ -1,15 +1,6 @@
-# Trepa Landing Page
+# Trepa concept demo
 
-A React/TypeScript landing-page prototype for a precision-based prediction-market concept. It uses a Fusion Starter scaffold, Tailwind CSS, Radix UI components and Framer Motion.
-
-## What is implemented
-
-- Landing-page sections for the concept, features, example questions and beta signup.
-- An interactive prediction slider with illustrative accuracy and payout calculations.
-- Responsive navigation and client-side routing.
-- A local signup confirmation state. Email addresses are not submitted to a backend or saved by this application.
-
-Displayed signup counts, market counts, prize pools and fictional testimonials are explicitly labeled illustrative, not verified product metrics. The UI illustrates a concept; it does not execute real trades, connect wallets, settle predictions or pay rewards.
+Trepa is a front-end concept for a precision-based prediction market. This repository provides a responsive landing page and a local practice simulator so visitors can try a numeric forecast and inspect the scoring rule.
 
 ## Run locally
 
@@ -18,10 +9,18 @@ npm ci
 npm run dev
 ```
 
-Vite is configured on port 8080. `npm run build` creates `dist/`; `npm run preview` serves a production build. Production assets and routing use `/Trepa-des/` for GitHub Pages. `npm run deploy` publishes with gh-pages and requires repository authorization.
+Vite serves the app at `http://localhost:8080`. `npm run build` creates `dist/`, `npm run preview` serves the production build, `npm run typecheck` runs the TypeScript project checks, and `npm test` checks the demo scoring rule. The production base path is `/Trepa-des/` for GitHub Pages.
 
-## Checks and limitations
+## Practice simulator
 
-Production build and referenced TypeScript project checks passed on 2 October 2026. `npm run typecheck` runs `tsc -b`. Full browser interactions remain unverified. Dependency updates within existing ranges reduced npm audit findings from 19 to five; remaining Router, Vitest mocker and Picomatch findings need separate dependency review before deployment. No test files were found in the source inventory, so the presence of Vitest is not evidence of test coverage.
+- Select one of four fictional numeric examples, choose an estimate from 0% to 10%, and stake practice points.
+- The simulator settles immediately against a hard-coded sample answer. It uses `score = max(0, 100 − 20 × distance in percentage points)` and `points returned = stake × score ÷ 50`.
+- The maximum practice return is 2× the stake. A zero score loses the full practice stake. The market has no real odds or price discovery.
+- The starting balance is 500 practice points. Balance and up to 10 recent results persist in this browser's local storage; **Reset points** clears them.
+- No email is collected by the page. The contact link opens the visitor's email app.
 
-The repository also contains design/specification files. They describe intended presentation, not delivered backend functionality. Template components and scaffolding should retain their upstream attribution.
+## Limits
+
+The example questions, answers, scoring formula, and practice points are illustrative. This app has no live data, market participants, backend, user accounts, wallet connection, real trading, settlement process, or payouts. It is not a real-money product. A production market would need independently verified data sources and settlement rules, real odds and market infrastructure, payments and custody choices, and jurisdiction-specific review.
+
+The source includes Fusion Starter scaffolding and its existing UI components. There is no verified production service behind the concept.
